@@ -1,4 +1,4 @@
-package pl.dentsys;
+package pl.dentsys.test;
 
 import java.util.ArrayList;
 import java.util.List;
