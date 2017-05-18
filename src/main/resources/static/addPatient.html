@@ -6,20 +6,22 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Spring boot and Angularjs Tutorial</title>
+    <title>Dodaj pacjenta</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/form.css">
+
+    
 </head>
 <body>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="/">Dental App</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="/">Strona główna</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Page 1-1</a></li>
@@ -32,7 +34,32 @@
     </ul>
   </div>
 </nav>
-  
+
+<div id="form">
+<h1 align="center">Wprowadź dane pacjenta</h1>
+			<div ng-controller="userController">
+			<form name="signupForm" ng-submit="sendPost()" novalidate="novalidate">
+			
+    <label>Imię:</label> <br><input ng-model="newPatient.name" type="text"/><br>
+    <label>Nazwisko:</label><br /> <input ng-model="newPatient.surename" type="text"/><br>
+    <label>Data urodzenia(rrrr/mm/dd):</label><br /><input ng-model="newPatient.dateBirth" onkeypress="return adddateBirth(this,event)" /><br>
+    <label>Adres:</label><br /><input ng-model="newPatient.address" type="text"/><br>
+    <label>Miasto:</label><br /><input ng-model="newPatient.city" type="text"/><br>
+    <label>Kod pocztowy:</label><br /><input ng-model="newPatient.postCode" onkeypress="return addPostCode(this,event)" /><br>
+    <label>Województwo:</label><br /><input ng-model="newPatient.region" /><br>
+  	<label>Kraj:</label><br /><input ng-model="newPatient.country" type="text"/><br>
+    <label>Telefon:</label><br /><input ng-model="newPatient.phone" onkeypress="return addPhone(this,event)" /><br>
+    <label>Email:</label><br /><input ng-model="newPatient.mail" type="text"/><br>
+    
+	
+	
+	
+	<button type="submit">Dodaj pacjenta</button>
+	</form>
+</div>	
+	
+</div>
+
 
 
 <script src="/webjars/angularjs/1.4.9/angular.js"></script>

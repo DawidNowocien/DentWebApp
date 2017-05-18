@@ -1,0 +1,51 @@
+ body {
+	background-color:#f3f3f3; /* ustawiamy kolor t³a naszej strony */
+	font-family: Arial, Helvetica, sans-serif; /* ustawiamy czcionkê z której korzystamy */
+}
+
+#form {
+        width:560px; /* ustawiamy szerokoœæ formularza */
+        margin:0 auto; /* je¿eli nasz formularz ma ustawion¹ szerokoœæ wyœrodkowujemy go */
+        background-color:#fff; /* dodajemy kolor t³a naszemu formularzowi */
+        border:2px solid #ccc; /* dodajemy obramowanie o szerokoœci 2px */
+        border-radius:10px; /* zaokr¹glamy t³o naszego formularza */
+		padding:20px; /* dodajemy margines wewn¹trz naszego formularza */
+        margin-top:20px; /* dodajemy margines górny naszego formularza */
+}
+
+#formlabel {
+    display:block;/* ustawiamy by label rozpoczyna³ siê od nowej linii*/
+    margin-bottom:5px;/* dodajemy margines dolny */
+    font-weight:bold; /* pogrubiamy czcionkê */
+    text-transform: uppercase; /* zamieniamy wszystkie litery na du¿e */
+    font-size:12px; /* ustawiamy wielkoœæ czcionki */
+    color:#555555; /* ustawiamy kolor czcionki */
+}
+
+#form textarea,
+#form input {
+	padding:5px; /* dodajemy margines wewn¹trz naszego pola */
+	border-radius:3px; /* dodajemy zaokraglone rogi */
+	border:1px solid #ccc; /* dodajemy obramowanie */
+	margin-bottom:25px; /* dodajemy margines dolny */
+	width:245px; /* ustalamy szerokoœæ */
+}
+
+#form input#submit {
+	width:255px; /* ustalamy szerokoœæ */
+	cursor:pointer; /* zmieniamy kursor */
+	margin-bottom:0px;/* resetujemy margines dolny */
+}
+
+#form p.copy {
+	color:#555555; /* ustawiamy kolor czcionki */
+	margin-bottom:0px; /* resetujemy margines dolny */
+	font-size:12px; /* ustawiamy rozmiar czcionki */
+	text-align: center; /* wyœrodkowywujemy tekst */
+}
+
+#form p.copy a {
+	color:#555555;/* ustawiamy kolor czcionki */ 
+	text-decoration: none; /* usuwamy podkreœlenie linku */
+	font-weight:bold; /* pogrubiamy czcionkê */
+}  
