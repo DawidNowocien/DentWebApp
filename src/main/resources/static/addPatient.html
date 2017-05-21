@@ -22,7 +22,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Dental App</a>
+      <a class="navbar-brand" href="/">DentMed</a>
     </div>
     <ul class="nav navbar-nav">
       <li><a href="/">Strona główna</a></li>
@@ -42,7 +42,7 @@
 	
     <label>Imię:</label> <br><input id="name" ng-model="newPatient.name" type="text"/><br>
     <label>Nazwisko:</label><br /> <input id="surname" ng-model="newPatient.surename" type="text"/><br>
-    <label>Data urodzenia(rrrr/mm/dd):</label><br /><input id="dateBirth" ng-model="newPatient.dateBirth" onkeypress="return adddateBirth(this,event)" /><br>
+    <label>Data urodzenia(rrrr/mm/dd):</label><br /><input id="dateBirth" ng-model="newPatient.dateBirth" type="date" /><br>
     <label>Adres:</label><br /><input id="address" ng-model="newPatient.address" type="text"/><br>
     <label>Miasto:</label><br /><input id="city" ng-model="newPatient.city" type="text"/><br>
     <label>Kod pocztowy:</label><br /><input id="postCode" ng-model="newPatient.postCode" onkeypress="return addPostCode(this,event)" /><br>
@@ -51,8 +51,6 @@
     <label>Telefon:</label><br /><input id="phone" ng-model="newPatient.phone" onkeypress="return addPhone(this,event)" /><br>
     <label>Email:</label><br /><input id="mail" ng-model="newPatient.mail" type="text"/><br>
     
-	
-	
 	
 	<button type="submit">Dodaj pacjenta</button>
 	<button type="submit" ng-click="resetForm()">Resetuj dane</button>
@@ -63,17 +61,24 @@
 	
 </div>
 
+
+
+<br><br><br><br>
 	<div id="footer">
 		<div id="container">
-			<p>© Dental App Team</p>
+			<p style="padding-left:400px; padding-top:20px">© DentMed Team</p>
 		</div>
 	</div>
+
+
+
 
 <script src="/webjars/angularjs/1.4.9/angular.js"></script>
 <script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
 <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/controller.js"></script>
+<script src="/js/patientController.js"></script>
 <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
 </body>
 </html>

@@ -26,10 +26,10 @@
                 alert('Error occured.');
             }
 
-            $http.post('/student/submitData', { newPatient:$scope.newPatient })
+            $http.post('/test', { newPatient:$scope.newPatient })
                 .success(onSuccess)
                 .error(onError);
-            $window.location.href = 'test';
+            $window.location.href = '/test.html';
 
         };
 
