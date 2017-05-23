@@ -1,5 +1,5 @@
  body {
-	background-color:#f3f3f3; /* ustawiamy kolor t³a naszej strony */
+	
 	font-family: Arial, Helvetica, sans-serif; /* ustawiamy czcionkê z której korzystamy */
 }
 
@@ -11,6 +11,7 @@
         border-radius:10px; /* zaokr¹glamy t³o naszego formularza */
 		padding:20px; /* dodajemy margines wewn¹trz naszego formularza */
         margin-top:20px; /* dodajemy margines górny naszego formularza */
+        opacity:0.85;
 }
 
 #formlabel {
@@ -24,23 +25,35 @@
 
 #form textarea,
 #form input {
-	padding:5px; /* dodajemy margines wewn¹trz naszego pola */
+	padding:2px; /* dodajemy margines wewn¹trz naszego pola */
 	border-radius:3px; /* dodajemy zaokraglone rogi */
 	border:1px solid #ccc; /* dodajemy obramowanie */
 	margin-bottom:25px; /* dodajemy margines dolny */
 	width:245px; /* ustalamy szerokoœæ */
+
+	
 }
 
-#form input#submit {
-	width:255px; /* ustalamy szerokoœæ */
-	cursor:pointer; /* zmieniamy kursor */
-	margin-bottom:0px;/* resetujemy margines dolny */
+#form button[type=submit]{
+	
+	width: 160px;
+	height: 35px;
+	background: black;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 4px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
 }
 
 #form p.copy {
 	color:#555555; /* ustawiamy kolor czcionki */
 	margin-bottom:0px; /* resetujemy margines dolny */
-	font-size:12px; /* ustawiamy rozmiar czcionki */
+	font-size:11px; /* ustawiamy rozmiar czcionki */
 	text-align: center; /* wyœrodkowywujemy tekst */
 }
 

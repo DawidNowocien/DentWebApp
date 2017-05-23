@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dodaj lekarza | DentMed</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/footer.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        
+</head>
+<body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:120%;">
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">DentMed</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/">Strona główna</a></li>
+     
+      <li><a href="/addPatient.html">Dodaj pacjenta</a></li>
+      <li class="active"><a href="/addDoctor.html">Dodaj lekarza</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div id="form">
+
+<h1 align="center">Wprowadź dane lekarza</h1>
+			<div ng-controller="patientDoctor">
+			<form name="addDoctort" ng-submit="submitDoctorForm()" novalidate="novalidate">
+	
+    <label>Imię:<br><input id="name" ng-model="newDoctor.name" type="text"/></label> <br>
+    <label>Nazwisko:<br /> <input id="surname" ng-model="newDoctor.surename" type="text"/></label> <br>
+    <label>Specjalizacja:<br /><input id="specialization" ng-model="newDoctor.specialization" type="text"/></label> <br>
+    <label>Adres:<br /><input id="address" ng-model="newDoctor.address" type="text"/></label> <br>
+    <label>Miasto:<br /><input id="city" ng-model="newDoctor.city" type="text"/></label> <br>
+    <label>Kod pocztowy:<br /><input id="postCode" ng-model="newDoctort.postCode" onkeypress="return addPostCode(this,event)" /></label> <br>
+    <label>Województwo:<br /><input id="region" ng-model="newDoctor.region" /></label> <br>
+  	<label>Kraj:<br /><input id="country" ng-model="newDoctor.country" type="text"/></label> <br>
+    <label>Telefon:<br /><input id="phone" ng-model="newDoctor.phone" onkeypress="return addPhone(this,event)" /></label> <br>
+  
+	
+	
+	
+	<button type="submit">Dodaj lekarza</button>
+	<button type="submit" ng-click="resetForm()">Resetuj dane</button>
+	</form>
+	
+
+</div>	
+	
+</div>
+<br><br><br><br>
+	<div id="footer">
+		<div id="container">
+			<p style="padding-left:400px; padding-top:20px">© DentMed Team</p>
+		</div>
+	</div>
+
+<script src="/webjars/angularjs/1.4.9/angular.js"></script>
+<script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
+<script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/controller.js"></script>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
+</body>
+</html>
