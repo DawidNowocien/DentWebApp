@@ -219,3 +219,6 @@ target/classes/META-INF/maven/pl.dentsys/DentWebApp/pom.properties
 target/classes/META-INF/maven/pl.dentsys/DentWebApp/pom.properties
 target/classes/META-INF/maven/pl.dentsys/DentWebApp/pom.properties
 target/classes/META-INF/maven/pl.dentsys/DentWebApp/pom.properties
+.classpath
+*.properties
+target/classes/META-INF/maven/pl.dentsys/DentWebApp/pom.xml

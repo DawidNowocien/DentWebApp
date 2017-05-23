@@ -27,10 +27,10 @@
                 alert('Error occured.');
             }
 
-//            $http.post('/test', { newPatient:$scope.newPatient })
-//                .success(onSuccess)
-//                .error(onError);
-//            $window.location.href = '/test.html';
+            $http.post('add-patient', $scope.newPatient)
+                .success(onSuccess)
+                .error(onError);
+            $window.location.href = '/test.html';
             redirectTo: '/';
         };
 
