@@ -215,3 +215,5 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+target/classes/META-INF/maven/pl.dentsys/DentWebApp/pom.properties
+target/classes/META-INF/maven/pl.dentsys/DentWebApp/pom.properties

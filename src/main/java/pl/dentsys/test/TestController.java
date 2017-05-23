@@ -7,8 +7,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class TestController {
 	
-    @RequestMapping(value = "/user/list", method = RequestMethod.GET)
-    String partialHandler() {
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    String getPatients() {
+    	
+        return "Test";
+    }
+    
+    @RequestMapping(value = "/users", method = RequestMethod.POST)
+    String savePatients() {
     	
         return "Test";
     }
