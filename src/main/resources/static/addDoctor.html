@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dodaj pacjenta</title>
+    <title>Dodaj pacjenta | DentMed</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css">
@@ -15,7 +15,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         
 </head>
-<body ng-app="app">
+<body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:120%;">
 
 
 
@@ -39,15 +39,15 @@
 			<div ng-controller="patientDoctor">
 			<form name="addDoctort" ng-submit="submitDoctorForm()" novalidate="novalidate">
 	
-    <label>Imię:</label> <br><input id="name" ng-model="newDoctor.name" type="text"/><br>
-    <label>Nazwisko:</label><br /> <input id="surname" ng-model="newDoctor.surename" type="text"/><br>
-    <label>Specjalizacja:</label><br /><input id="specialization" ng-model="newDoctor.specialization" type="text"/><br>
-    <label>Adres:</label><br /><input id="address" ng-model="newDoctor.address" type="text"/><br>
-    <label>Miasto:</label><br /><input id="city" ng-model="newDoctor.city" type="text"/><br>
-    <label>Kod pocztowy:</label><br /><input id="postCode" ng-model="newDoctort.postCode" onkeypress="return addPostCode(this,event)" /><br>
-    <label>Województwo:</label><br /><input id="region" ng-model="newDoctor.region" /><br>
-  	<label>Kraj:</label><br /><input id="country" ng-model="newDoctor.country" type="text"/><br>
-    <label>Telefon:</label><br /><input id="phone" ng-model="newDoctor.phone" onkeypress="return addPhone(this,event)" /><br>
+    <label>Imię:<br><input id="name" ng-model="newDoctor.name" type="text"/></label> <br>
+    <label>Nazwisko:<br /> <input id="surname" ng-model="newDoctor.surename" type="text"/></label> <br>
+    <label>Specjalizacja:<br /><input id="specialization" ng-model="newDoctor.specialization" type="text"/></label> <br>
+    <label>Adres:<br /><input id="address" ng-model="newDoctor.address" type="text"/></label> <br>
+    <label>Miasto:<br /><input id="city" ng-model="newDoctor.city" type="text"/></label> <br>
+    <label>Kod pocztowy:<br /><input id="postCode" ng-model="newDoctort.postCode" onkeypress="return addPostCode(this,event)" /></label> <br>
+    <label>Województwo:<br /><input id="region" ng-model="newDoctor.region" /></label> <br>
+  	<label>Kraj:<br /><input id="country" ng-model="newDoctor.country" type="text"/></label> <br>
+    <label>Telefon:<br /><input id="phone" ng-model="newDoctor.phone" onkeypress="return addPhone(this,event)" /></label> <br>
   
 	
 	
