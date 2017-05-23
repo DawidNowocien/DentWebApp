@@ -49,7 +49,21 @@
 	padding: 6px;
 	margin-top: 10px;
 }
-
+#form button[type=reset]{
+	
+	width: 160px;
+	height: 35px;
+	background: black;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 4px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
 #form p.copy {
 	color:#555555; /* ustawiamy kolor czcionki */
 	margin-bottom:0px; /* resetujemy margines dolny */

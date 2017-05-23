@@ -20,17 +20,18 @@
 
             var onSuccess = function (data, status, headers, config) {
                 alert('Patient saved successfully.');
+                
             };
 
             var onError = function (data, status, headers, config) {
                 alert('Error occured.');
             }
 
-            $http.post('/test', { newPatient:$scope.newPatient })
-                .success(onSuccess)
-                .error(onError);
-            $window.location.href = '/test.html';
-
+//            $http.post('/test', { newPatient:$scope.newPatient })
+//                .success(onSuccess)
+//                .error(onError);
+//            $window.location.href = '/test.html';
+            redirectTo: '/';
         };
 
         //6. create resetForm() function. This will be called on Reset button click.  
