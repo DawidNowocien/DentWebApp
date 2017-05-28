@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dodaj pacjenta | DentMed</title>
+    <title>Dodaj wizytę | DentMed</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css">
@@ -27,7 +27,8 @@
     <ul class="nav navbar-nav">
       <li><a href="/">Strona główna</a></li>
      
-      <li class="active"><a href="/addPatient.html">Dodaj pacjenta</a></li>
+      <li><a href="/addPatient.html">Dodaj pacjenta</a></li>
+      <li class="active"><a href="/addVisit.html">Dodaj wizytę</a></li>
       <li><a href="/addDoctor.html">Dodaj lekarza</a></li>
     </ul>
   </div>
@@ -36,7 +37,7 @@
 
 <div id="form">
 
-<h1 align="center">Wprowadź dane pacjenta</h1>
+<h1 align="center">Wprowadź dane wizyty</h1>
 			<div ng-controller="patientController">
 			<form name="addPatient" ng-submit="submitPatientForm()" novalidate="novalidate">
 	
@@ -52,7 +53,7 @@
     			 <label>Email:<br /><input id="mail" ng-model="newPatient.mail" type="text"/></label><br>
     
 	
-	<button type="submit">Dodaj pacjenta</button>
+	<button type="submit">Dodaj wizytę</button>
 	<button type="reset" ng-click="resetForm()">Resetuj dane</button>
 	</form>
 	
