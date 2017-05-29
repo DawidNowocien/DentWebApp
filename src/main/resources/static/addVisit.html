@@ -22,14 +22,14 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">DentMed</a>
+      <a class="navbar-brand" href="/startDoctorPage.html">DentMed</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="/">Strona główna</a></li>
+      <li><a href="/startDoctorPage.html">Strona główna</a></li>
      
       <li><a href="/addPatient.html">Dodaj pacjenta</a></li>
       <li class="active"><a href="/addVisit.html">Dodaj wizytę</a></li>
-      <li><a href="/addDoctor.html">Dodaj lekarza</a></li>
+     
     </ul>
   </div>
 </nav>
@@ -38,19 +38,34 @@
 <div id="form">
 
 <h1 align="center">Wprowadź dane wizyty</h1>
-			<div ng-controller="patientController">
-			<form name="addPatient" ng-submit="submitPatientForm()" novalidate="novalidate">
+			<div ng-controller="visitController">
+			<form name="addVisit" ng-submit="submitVisitForm()" novalidate="novalidate">
 	
-   				 <label>Imię:<br><input id="name" ng-model="newPatient.name" type="text"/></label><br>
-    			 <label>Nazwisko:<br /> <input id="surename" ng-model="newPatient.surename" type="text"/></label><br>
-    			 <label>Data urodzenia(rrrr/mm/dd):<br /><input id="dateBirth" ng-model="newPatient.dateBirth" type="date" /></label><br>
-    			 <label>Adres:<br /><input id="address" ng-model="newPatient.address" type="text"/></label><br>
-    			 <label>Miasto:<br /><input id="city" ng-model="newPatient.city" type="text"/></label><br>
-    			 <label>Kod pocztowy:<br /><input id="postCode" ng-model="newPatient.postCode" onkeypress="return addPostCode(this,event)" /></label><br>
-    			 <label>Województwo:<br /><input id="region" ng-model="newPatient.region" /></label><br>
-  				 <label>Kraj:<br /><input id="country" ng-model="newPatient.country" type="text"/></label><br>
-   			 	 <label>Telefon:<br /><input id="phone" ng-model="newPatient.phone" onkeypress="return addPhone(this,event)" /></label><br>
-    			 <label>Email:<br /><input id="mail" ng-model="newPatient.mail" type="text"/></label><br>
+   				
+   				 <label>Wybierz pacjenta:</label><br><select style="width:245px;" id="patientVisit" ng-model="newVisit.patientVisit">
+				 <option>aaaaa</option>
+				 <option>bbbbb</option>
+				 <option>ccccc</option>
+				 </select><br><br>
+   				 
+   				 <label>Wybierz lekarza:</label><br><select style="width:245px;" id="doctorVisit" ng-model="newVisit.doctorVisit">
+				 <option>aaaaa</option>
+				 <option>bbbbb</option>
+				 <option>ccccc</option>
+				 </select><br><br>
+   				 
+   				 <label>Wybierz zabieg:</label><br><select multiple="multiple" style="width:245px;"  id="interventionVisit" ng-model="newVisit.interventionVisit">
+				 <option>aaaaa</option>
+				 <option>bbbbb</option>
+				 <option>ccccc</option>
+				 </select><br><br>
+				 
+   				 <label>Data wizyty(rrrr/mm/dd):<br /><input id="dateVisit" ng-model="newVisit.dateVisit" type="date" /></label><br>
+   				 <label>Godzina wizyty:<br><input id="timeVisit" ng-model="newVisit.timeVisit" type="time" /> </label><br>
+
+   				 
+   				 
+   				 
     
 	
 	<button type="submit">Dodaj wizytę</button>
@@ -79,7 +94,7 @@
 <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/controller.js"></script>
-<script src="/js/patientController.js"></script>
+<script src="/js/visitController.js"></script>
 <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
 </body>
 </html>
