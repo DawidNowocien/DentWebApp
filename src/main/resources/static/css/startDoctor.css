@@ -1,0 +1,49 @@
+.header{
+	position: absolute;
+	top: calc(1%);
+	left: calc(50% - 175px);
+	z-index: 2;
+}
+
+.header div{
+	float: left;
+	color: #FFFFF0;
+	font-family: 'Exo', sans-serif;
+	font-size: 80px;
+	font-weight: 250;
+}
+
+.header div span{
+	font-weight: bold;
+	color: black !important;
+}
+
+.login{
+	position: absolute;
+	top: calc(20%);
+	left: calc(33%);
+	height: 150px;
+	width: 350px;
+	padding: 10px;
+	z-index: 2;
+	
+}
+
+
+.login button[type=submit]{
+	width: 430px;
+	height: 60px;
+	cursor: pointer;
+	font-size: 28px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+	opacity:0.85;
+	background: rgba(0,0,0,0.6);
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 4px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+}
+
+
