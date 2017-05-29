@@ -5,7 +5,8 @@
     app.controller("patientController", function ($scope, $http) {
 
         //3. attach originalPatient model object
-        $scope.originalnewPatient = {
+       $scope.originalnewPatient = {
+
             name: 'James',
             surename: 'Bond',
             dateBirth: new Date('1980/01/31'),
@@ -18,8 +19,10 @@
         //5. create submitnewPatientForm() function. This will be called when user submits the form
         $scope.submitPatientForm = function () {
 
+        
             var onSuccess = function (data, status, headers, config) {
-                alert('Patient saved successfully.');
+            	alert('Patient saved successfully.');
+            	
                 
             };
 
@@ -27,11 +30,10 @@
                 alert('Error occured.');
             }
 
+         
             $http.post('add-patient', $scope.newPatient)
                 .success(onSuccess)
-                .error(onError);
-//            $window.location.href = '/test.html';
-//            redirectTo: '/';
+                .error(onError);  
         };
 
         //6. create resetForm() function. This will be called on Reset button click.  
