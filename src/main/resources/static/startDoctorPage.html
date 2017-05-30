@@ -6,14 +6,28 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Administrator - strona główna | DentMed</title>
+    <title>Lekarz - strona główna | DentMed</title>
     <meta name="description" content="Zaloguj się do panelu do zarządzania systemem dentystycznym">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" type="text/css" href="/css/test.css" />   
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/css/startDoctor.css" />   
 </head>
 <body style="background-image: url('images/gabinet2.jpg');background-size:100%;">
 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/startDoctorPage.html">DentMed</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/startDoctorPage.html">Strona główna</a></li>
+     
+      <li><a href="/addPatient.html">Dodaj pacjenta</a></li>
+      <li><a href="/addVisit.html">Dodaj wizytę</a></li>
+    </ul>
+  </div>
+</nav>
 
 
 <div class="header">
@@ -23,15 +37,13 @@ Dent<span>Med</span>
 </div>
 	
 	<div class="login">
-	<form action="/addDoctor.html">
-   <button type="submit">Dodaj nowego lekarza</button>
-</form>  
+		<form action="/addPatient.html">
+   			<button type="submit">Dodaj nowego pacjenta</button>
+		</form>  
+  		<form action="/addVisit.html">
+   			<button type="submit">Dodaj nową wizytę</button>
+		</form>
   
-  
-  
-
-
-
 	</div>	
 
 
@@ -41,6 +53,7 @@ Dent<span>Med</span>
 <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/controller.js"></script>
-
+<script src="/js/doctorController.js"></script>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
 </body>
 </html>

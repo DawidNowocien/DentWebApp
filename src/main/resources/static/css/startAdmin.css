@@ -1,6 +1,6 @@
 .header{
 	position: absolute;
-	top: calc(1%);
+	top: calc(25%);
 	left: calc(50% - 175px);
 	z-index: 2;
 }
@@ -20,7 +20,7 @@
 
 .login{
 	position: absolute;
-	top: calc(20%);
+	top: calc(40%);
 	left: calc(33%);
 	height: 150px;
 	width: 350px;
