@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="/css/form.css">
     <link rel="stylesheet" href="/css/footer.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+
 </head>
 <body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:120%;">
 
@@ -50,6 +53,7 @@
    			 	 <label>Telefon:<br /><input id="phone" ng-model="newPatient.phone" onkeypress="return addPhone(this,event)" /></label><br>
     			 <label>Email:<br /><input id="mail" ng-model="newPatient.mail" type="text"/></label><br>
     
+
 	
 	<button type="submit">Zapisz dane</button>
 	<button type="reset" ng-click="resetForm()">Resetuj dane</button>

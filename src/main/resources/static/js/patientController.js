@@ -7,10 +7,7 @@
         //3. attach originalPatient model object
        $scope.originalnewPatient = {
 
-            name: 'James',
-            surename: 'Bond',
-            dateBirth: new Date('1980/01/31'),
-            address: 'Górczewska 6'
+         
         };
 
         //4. copy originalnewPatient to newPatient. newPatient will be bind to a form 
