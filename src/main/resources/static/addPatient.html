@@ -14,7 +14,15 @@
     <link rel="stylesheet" href="/css/footer.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
-
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#dateBirth" ).datepicker();
+  } );
+  </script>
 
 </head>
 <body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:120%;">
@@ -40,18 +48,18 @@
 
 <h1 align="center">Wprowadź dane pacjenta</h1>
 			<div ng-controller="patientController">
-			<form name="addPatient" ng-submit="submitPatientForm()" novalidate="novalidate">
+			<form name="addPatient" ng-submit="submitPatientForm()" >
 	
-   				 <label>Imię:<br><input id="name" ng-model="newPatient.name" type="text"/></label><br>
-    			 <label>Nazwisko:<br /> <input id="surname" ng-model="newPatient.surname" type="text"/></label><br>
-    			 <label>Data urodzenia(rrrr/mm/dd):<br /><input id="dateBirth" ng-model="newPatient.dateBirth" type="date" /></label><br>
-    			 <label>Adres:<br /><input id="address" ng-model="newPatient.address" type="text"/></label><br>
-    			 <label>Miasto:<br /><input id="city" ng-model="newPatient.city" type="text"/></label><br>
-    			 <label>Kod pocztowy:<br /><input id="postCode" ng-model="newPatient.postCode" onkeypress="return addPostCode(this,event)" /></label><br>
-    			 <label>Województwo:<br /><input id="region" ng-model="newPatient.region" /></label><br>
-  				 <label>Kraj:<br /><input id="country" ng-model="newPatient.country" type="text"/></label><br>
-   			 	 <label>Telefon:<br /><input id="phone" ng-model="newPatient.phone" onkeypress="return addPhone(this,event)" /></label><br>
-    			 <label>Email:<br /><input id="mail" ng-model="newPatient.mail" type="text"/></label><br>
+   				 <label>Imię:<br><input id="name" ng-model="newPatient.name" type="text" required/></label><br>
+    			 <label>Nazwisko:<br /> <input id="surname" ng-model="newPatient.surname" type="text" required/></label><br>
+    			 <label>Data urodzenia(rrrr/mm/dd):<br /><input type="text" id="dateBirth" ng-model="newPatient.dateBirth"  required/></label><br>
+    			 <label>Adres:<br /><input id="address" ng-model="newPatient.address" type="text" required/></label><br>
+    			 <label>Miasto:<br /><input id="city" ng-model="newPatient.city" type="text" required/></label><br>
+    			 <label>Kod pocztowy:<br /><input id="postCode" ng-model="newPatient.postCode" onkeypress="return addPostCode(this,event)" required/></label><br>
+    			 <label>Województwo:<br /><input id="region" ng-model="newPatient.region" required/></label><br>
+  				 <label>Kraj:<br /><input id="country" ng-model="newPatient.country" type="text" required/></label><br>
+   			 	 <label>Telefon:<br /><input id="phone" ng-model="newPatient.phone" onkeypress="return addPhone(this,event)" required/></label><br>
+    			 <label>Email:<br /><input id="mail" ng-model="newPatient.mail" type="email" required/></label><br>
     
 
 	

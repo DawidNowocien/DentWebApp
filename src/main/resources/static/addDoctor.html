@@ -35,17 +35,17 @@
 
 <h1 align="center">Wprowadź dane lekarza</h1>
 			<div ng-controller="doctorController">
-			<form name="addDoctor" ng-submit="submitDoctorForm()" novalidate="novalidate">
+			<form name="addDoctor" ng-submit="submitDoctorForm()">
 	
-    <label>Imię:<br><input id="name" ng-model="newDoctor.name" type="text"/></label> <br>
-    <label>Nazwisko:<br /> <input id="surname" ng-model="newDoctor.surename" type="text"/></label> <br>
-    <label>Specjalizacja:<br /><input id="specialization" ng-model="newDoctor.specialization" type="text"/></label> <br>
-    <label>Adres:<br /><input id="address" ng-model="newDoctor.address" type="text"/></label> <br>
-    <label>Miasto:<br /><input id="city" ng-model="newDoctor.city" type="text"/></label> <br>
-    <label>Kod pocztowy:<br /><input id="postCode" ng-model="newDoctor.postCode" onkeypress="return addPostCode(this,event)" /></label> <br>
-    <label>Województwo:<br /><input id="region" ng-model="newDoctor.region" /></label> <br>
-  	<label>Kraj:<br /><input id="country" ng-model="newDoctor.country" type="text"/></label> <br>
-    <label>Telefon:<br /><input id="phone" ng-model="newDoctor.phone" onkeypress="return addPhone(this,event)" /></label> <br>
+    <label>Imię:<br><input id="name" ng-model="newDoctor.name" type="text" required/></label> <br>
+    <label>Nazwisko:<br /> <input id="surname" ng-model="newDoctor.surname" type="text" required/></label> <br>
+    <label>Specjalizacja:<br /><input id="specialization" ng-model="newDoctor.specialization" type="text" required/></label> <br>
+    <label>Adres:<br /><input id="address" ng-model="newDoctor.address" type="text" required/></label> <br>
+    <label>Miasto:<br /><input id="city" ng-model="newDoctor.city" type="text" required/></label> <br>
+    <label>Kod pocztowy:<br /><input id="postCode" ng-model="newDoctor.postCode" onkeypress="return addPostCode(this,event)" required/></label> <br>
+    <label>Województwo:<br /><input id="region" ng-model="newDoctor.region" required/></label> <br>
+  	<label>Kraj:<br /><input id="country" ng-model="newDoctor.country" type="text" required/></label> <br>
+    <label>Telefon:<br /><input id="phone" ng-model="newDoctor.phone" onkeypress="return addPhone(this,event)" required/></label> <br>
   
 	
 	

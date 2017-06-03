@@ -6,10 +6,7 @@
 
         //3. attach originalvisit model object
         $scope.originalnewVisit = {
-            name: 'James',
-            surename: 'Bond',
-            dateBirth: new Date('1980/01/31'),
-            address: 'Górczewska 6'
+        
         };
 
         //4. copy originalnewVisit to newVisit. newVisit will be bind to a form 
@@ -30,8 +27,7 @@
             $http.post('add-visit', $scope.newVisit)
                 .success(onSuccess)
                 .error(onError);
-//            $window.location.href = '/test.html';
-//            redirectTo: '/';
+            window.location.replace('/startDoctorPage.html');
         };
 
         //6. create resetForm() function. This will be called on Reset button click.  

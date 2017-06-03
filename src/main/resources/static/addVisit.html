@@ -39,36 +39,38 @@
 
 <h1 align="center">Wprowadź dane wizyty</h1>
 			<div ng-controller="visitController">
-			<form name="addVisit" ng-submit="submitVisitForm()" novalidate="novalidate">
+			<form name="addVisit" ng-submit="submitVisitForm()">
 	
    				
-   				 <label>Wybierz pacjenta:</label><br><select style="width:245px;" id="patientVisit" ng-model="newVisit.patientVisit">
+   				 <label>Wybierz pacjenta:</label><br><select style="width:245px;" id="patientVisit" ng-model="newVisit.patientVisit" required>
+				 <option value="">Brak</option>
 				 <option>aaaaa</option>
 				 <option>bbbbb</option>
 				 <option>ccccc</option>
 				 </select><br><br>
    				 
-   				 <label>Wybierz lekarza:</label><br><select style="width:245px;" id="doctorVisit" ng-model="newVisit.doctorVisit">
+   				 <label>Wybierz lekarza:</label><br><select style="width:245px;" id="doctorVisit" ng-model="newVisit.doctorVisit" required>
+				 <option value="">Brak</option>
 				 <option>aaaaa</option>
 				 <option>bbbbb</option>
 				 <option>ccccc</option>
 				 </select><br><br>
    				 
-   				 <label>Wybierz zabieg:</label><br><select multiple="multiple" style="width:245px;"  id="interventionVisit" ng-model="newVisit.interventionVisit">
+   				 <label>Wybierz zabieg:</label><br><select multiple="multiple" style="width:245px;"  id="interventionVisit" ng-model="newVisit.interventionVisit" required>
 				 <option>aaaaa</option>
 				 <option>bbbbb</option>
 				 <option>ccccc</option>
 				 </select><br><br>
 				 
-   				 <label>Data wizyty(rrrr/mm/dd):<br /><input id="dateVisit" ng-model="newVisit.dateVisit" type="date" /></label><br>
-   				 <label>Godzina wizyty:<br><input id="timeVisit" ng-model="newVisit.timeVisit" type="time" /> </label><br>
+   				 <label>Data wizyty(rrrr/mm/dd):<br /><input id="dateVisit" ng-model="newVisit.dateVisit" type="date" required/></label><br>
+   				 <label>Godzina wizyty:<br><input id="timeVisit" ng-model="newVisit.timeVisit" type="time" required /> </label><br>
 
    				 
    				 
    				 
     
 	
-	<button type="submit">Dodaj wizytę</button>
+	<button type="submit">Zapisz dane</button>
 	<button type="reset" ng-click="resetForm()">Resetuj dane</button>
 	</form>
 	
