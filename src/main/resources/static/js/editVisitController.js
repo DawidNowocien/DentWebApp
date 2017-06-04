@@ -16,12 +16,12 @@
         $scope.submitEditVisitForm = function () {
 
             var onSuccess = function (data, status, headers, config) {
-                alert('Visit saved successfully.');
+                alert('Dane wizyty zostały prawidłowo zapisane.');
                 
             };
 
             var onError = function (data, status, headers, config) {
-                alert('Error occured.');
+                alert('Wystąpił błąd podczas zapisywania danych.');
             }
 
             $http.post('edit-visit', $scope.editVisit)

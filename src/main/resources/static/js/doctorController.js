@@ -16,12 +16,12 @@
         $scope.submitDoctorForm = function () {
 
             var onSuccess = function (data, status, headers, config) {
-                alert('Patient saved successfully.');
+                alert('Dane lekarza zostały prawidłowo zapisane.');
                 
             };
 
             var onError = function (data, status, headers, config) {
-                alert('Error occured.');
+                alert('Wystąpił błąd podczas zapisywania danych.');
             }
 
             $http.post('add-doctor', $scope.newDoctor)

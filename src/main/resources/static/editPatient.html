@@ -54,6 +54,7 @@
 	
    				 <label>Imię:<br><input id="name" ng-model="editPatient.name" type="text" required/></label><br>
     			 <label>Nazwisko:<br /> <input id="surname" ng-model="editPatient.surname" type="text" required/></label><br>
+    			 <label>Pesel:<br /> <input id="pesel" ng-model="editPatient.pesel" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11" required/></label><br>
     			 <label>Data urodzenia(rrrr/mm/dd):<br /><input type="text" id="dateBirth" ng-model="editPatient.dateBirth" required/></label><br>
     			 <label>Adres:<br /><input id="address" ng-model="editPatient.address" type="text" required/></label><br>
     			 <label>Miasto:<br /><input id="city" ng-model="editPatient.city" type="text" required/></label><br>

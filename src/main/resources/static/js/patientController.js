@@ -18,13 +18,13 @@
 
         
             var onSuccess = function (data, status, headers, config) {
-            	alert('Patient saved successfully.');
+            	alert('Dane pacjenta zostały prawidłowo zapisane.');
             	
                              
             };
 
             var onError = function (data, status, headers, config) {
-                alert('Error occured.');
+                alert('Wystąpił błąd podczas zapisywania danych.');
             }
             $http.post('add-patient', $scope.newPatient)
             .success(onSuccess)

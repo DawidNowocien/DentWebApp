@@ -21,13 +21,13 @@ city: 'warszawa'
 
         
             var onSuccess = function (data, status, headers, config) {
-            	alert('Patient saved successfully.');
+            	alert('Dane pacjenta zostały prawidłowo zapisane.');
             	
                              
             };
 
             var onError = function (data, status, headers, config) {
-                alert('Error occured.');
+                alert('Wystąpił błąd podczas zapisywania danych.');
             }
             $http.post('edit-patient', $scope.editPatient)
             .success(onSuccess)
