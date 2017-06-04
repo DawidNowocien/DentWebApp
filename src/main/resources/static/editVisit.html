@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edytuj dane wizyty | DentMed</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/footer.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    
+</head>
+<body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:120%;">
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/startDoctorPage.html">DentMed</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/startDoctorPage.html">Strona główna</a></li>
+     
+      <li><a href="/addPatient.html">Dodaj pacjenta</a></li>
+      <li><a href="/addVisit.html">Dodaj wizytę</a></li>
+      <li><a href="/searchPatient.html">Wyszukaj pacjenta</a></li>
+      <li><a href="/searchVisit.html">Wyszukaj wizytę</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div id="form">
+
+<h1 align="center">Edytuj dane wizyty</h1>
+			<div ng-controller="editVisitController">
+			<form name="edit" ng-submit="submitEditVisitForm()">
+	
+   				
+   				 <label>Wybierz pacjenta:</label><br><select style="width:245px;" id="patientVisit" ng-model="editVisit.patientVisit" required>
+				 <option value="">Brak</option>
+				 <option>aaaaa</option>
+				 <option>bbbbb</option>
+				 <option>ccccc</option>
+				 </select><br><br>
+   				 
+   				 <label>Wybierz lekarza:</label><br><select style="width:245px;" id="doctorVisit" ng-model="editVisit.doctorVisit" required>
+				 <option value="">Brak</option>
+				 <option>aaaaa</option>
+				 <option>bbbbb</option>
+				 <option>ccccc</option>
+				 </select><br><br>
+   				 
+   				 <label>Wybierz zabieg:</label><br><select multiple="multiple" style="width:245px;"  id="interventionVisit" ng-model="editVisit.interventionVisit" required>
+				 <option>aaaaa</option>
+				 <option>bbbbb</option>
+				 <option>ccccc</option>
+				 </select><br><br>
+				 
+   				 <label>Data wizyty(rrrr/mm/dd):<br /><input id="dateVisit" ng-model="editVisit.dateVisit" type="date" required/></label><br>
+   				 <label>Godzina wizyty:<br><input id="timeVisit" ng-model="editVisit.timeVisit" type="time" required /> </label><br>
+
+   				 
+   				 
+   				 
+    
+	
+	<button type="submit">Zapisz dane</button>
+	<button type="reset" ng-click="resetForm()">Resetuj dane</button>
+	</form>
+	
+
+</div>	
+	
+</div>
+
+
+
+<br><br><br><br>
+	<div id="footer">
+		<div id="container">
+			<p style="padding-left:400px; padding-top:20px">© DentMed Team</p>
+		</div>
+	</div>
+
+
+
+
+<script src="/webjars/angularjs/1.4.9/angular.js"></script>
+<script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
+<script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/controller.js"></script>
+<script src="/js/editVisitController.js"></script>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
+</body>
+</html>
