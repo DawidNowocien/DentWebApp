@@ -18,11 +18,6 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#dateBirth" ).datepicker();
-  } );
-  </script>
 
 </head>
 <body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:120%;">
@@ -48,20 +43,13 @@
 
 <div id="form">
 
-<h1 align="center">Wprowadź dane pacjenta</h1>
+<h1 align="center">Wyszukaj pacjenta</h1>
 			<div ng-controller="searchPatientController">
-			<form name="addPatient" ng-submit="submitPatientForm()" >
+			<form name="search" ng-submit="submitSearchPatientForm()" >
 	
-   				 <label>Imię:<br><input id="name" ng-model="newPatient.name" type="text" required/></label><br>
-    			 <label>Nazwisko:<br /> <input id="surname" ng-model="newPatient.surname" type="text" required/></label><br>
-    			 <label>Data urodzenia(rrrr/mm/dd):<br /><input type="text" id="dateBirth" ng-model="newPatient.dateBirth"  required/></label><br>
-    			 <label>Adres:<br /><input id="address" ng-model="newPatient.address" type="text" required/></label><br>
-    			 <label>Miasto:<br /><input id="city" ng-model="newPatient.city" type="text" required/></label><br>
-    			 <label>Kod pocztowy:<br /><input id="postCode" ng-model="newPatient.postCode" onkeypress="return addPostCode(this,event)" required/></label><br>
-    			 <label>Województwo:<br /><input id="region" ng-model="newPatient.region" required/></label><br>
-  				 <label>Kraj:<br /><input id="country" ng-model="newPatient.country" type="text" required/></label><br>
-   			 	 <label>Telefon:<br /><input id="phone" ng-model="newPatient.phone" onkeypress="return addPhone(this,event)" required/></label><br>
-    			 <label>Email:<br /><input id="mail" ng-model="newPatient.mail" type="email" required/></label><br>
+   				 <label>Imię:<br><input id="name" ng-model="searchPatient.name" type="text"/></label><br>
+    			 <label>Nazwisko:<br /> <input id="surname" ng-model="searchPatient.surname" type="text"/></label><br>
+    			 <label>Pesel:<br /> <input id="pesel" ng-model="searchPatient.pesel" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11"/></label><br>
     
 
 	
@@ -91,7 +79,7 @@
 <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/controller.js"></script>
-<script src="/js/patientController.js"></script>
+<script src="/js/searchPatientController.js"></script>
 <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
 
 

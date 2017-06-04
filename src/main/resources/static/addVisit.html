@@ -63,8 +63,8 @@
 				 <option>ccccc</option>
 				 </select><br><br>
 				 
-   				 <label>Data wizyty(rrrr/mm/dd):<br /><input id="dateVisit" ng-model="newVisit.dateVisit" type="date" required/></label><br>
-   				 <label>Godzina wizyty:<br><input id="timeVisit" ng-model="newVisit.timeVisit" type="time" required /> </label><br>
+   				 <label>Data wizyty(dd/mm/rrrr):<br /><input id="dateVisit" ng-model="newVisit.dateVisit" type="text"  onkeypress="return addDate(this,event)" required/></label><br>
+   				 <label>Godzina wizyty:<br><input id="timeVisit" ng-model="newVisit.timeVisit" type="text" onkeypress="return addTime(this,event)" required /> </label><br>
 
    				 
    				 

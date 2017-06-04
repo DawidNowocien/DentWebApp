@@ -18,6 +18,11 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#dateBirth" ).datepicker();
+  } );
+  </script>
 
 </head>
 <body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:120%;">
@@ -50,7 +55,7 @@
    				 <label>Imię:<br><input id="name" ng-model="newPatient.name" type="text" required/></label><br>
     			 <label>Nazwisko:<br /> <input id="surname" ng-model="newPatient.surname" type="text" required/></label><br>
     			 <label>Pesel:<br /> <input id="pesel" ng-model="newPatient.pesel" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11" required/></label><br>
-    			 <label>Data urodzenia(dd/mm/rrrr):<br /><input type="text" id="dateBirth" ng-model="newPatient.dateBirth"  onkeypress="return addDate(this,event)" required/></label><br>
+    			 <label>Data urodzenia(rrrr/mm/dd):<br /><input type="text" id="dateBirth" ng-model="newPatient.dateBirth"  required/></label><br>
     			 <label>Adres:<br /><input id="address" ng-model="newPatient.address" type="text" required/></label><br>
     			 <label>Miasto:<br /><input id="city" ng-model="newPatient.city" type="text" required/></label><br>
     			 <label>Kod pocztowy:<br /><input id="postCode" ng-model="newPatient.postCode" onkeypress="return addPostCode(this,event)" required/></label><br>

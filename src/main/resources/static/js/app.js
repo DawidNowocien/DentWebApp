@@ -34,7 +34,25 @@ return false;
 } 
 } 
 
+function addTime(V,e) 
+{ 
+var p=V.value; 
+var ch=":" 
+var q=String.fromCharCode(window.Event?e.which:e.keyCode); 
 
+if(!isNaN(q)&&q!=" "){ 
+if (p.length==2) { 
+p=p+ch; 
+V.value=p; 
+return true; 
+} 
+if (p.length==5) { 
+return false; 
+} 
+} else { 
+return false; 
+} 
+} 
 
 
 
@@ -64,6 +82,31 @@ return false;
 } 
 } 
 
+function addDate(V,e) 
+{ 
+var p=V.value; 
+var ch="/" 
+var q=String.fromCharCode(window.Event?e.which:e.keyCode); 
+
+if(!isNaN(q)&&q!=" "){ 
+if (p.length==2) { 
+p=p+ch; 
+V.value=p; 
+return true; 
+} 
+if (p.length==5) {
+	p=p+ch; 
+	V.value=p; 	
+return true; 
+}
+if (p.length==10) {
+
+return false; 
+}
+} else { 
+return false; 
+} 
+} 
 
 angular.module('datepickerBasicUsage', ['ngMaterial', 'ngMessages']).controller('AppCtrl', function() {
   this.myDate = new Date();
