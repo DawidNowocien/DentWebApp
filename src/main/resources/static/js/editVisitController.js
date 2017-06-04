@@ -4,10 +4,14 @@
     //2. create controller
     app.controller("editVisitController", function ($scope, $http) {
 
+    	$http.get('data/dane3.json').success(function(data){
+    		$scope.originaleditVisit = data;
+    	})
+    	
         //3. attach originalvisit model object
-        $scope.originaleditVisit = {
-        
-        };
+//        $scope.originaleditVisit = {
+//        
+//        };
 
         //4. copy originalnewVisit to newVisit. newVisit will be bind to a form 
         $scope.editVisit = angular.copy($scope.originaleditVisit);

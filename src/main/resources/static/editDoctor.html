@@ -38,15 +38,15 @@
 			<div ng-controller="editDoctorController">
 			<form name="edit" ng-submit="submitEditDoctorForm()">
 	
-    <label>Imię:<br><input id="name" ng-model="editDoctor.name" type="text" required/></label> <br>
-    <label>Nazwisko:<br /> <input id="surname" ng-model="editDoctor.surname" type="text" required/></label> <br>
-    <label>Specjalizacja:<br /><input id="specialization" ng-model="editDoctor.specialization" type="text" required/></label> <br>
-    <label>Adres:<br /><input id="address" ng-model="editDoctor.address" type="text" required/></label> <br>
-    <label>Miasto:<br /><input id="city" ng-model="editDoctor.city" type="text" required/></label> <br>
-    <label>Kod pocztowy:<br /><input id="postCode" ng-model="editDoctor.postCode" onkeypress="return addPostCode(this,event)" required/></label> <br>
-    <label>Województwo:<br /><input id="region" ng-model="editDoctor.region" required/></label> <br>
-  	<label>Kraj:<br /><input id="country" ng-model="editDoctor.country" type="text" required/></label> <br>
-    <label>Telefon:<br /><input id="phone" ng-model="editDoctor.phone" onkeypress="return addPhone(this,event)" required/></label> <br>
+    <label>Imię:<br><input id="name" ng-model="editDoctor.name" type="text" required ng-value="originaleditDoctor.name"/></label> <br>
+    <label>Nazwisko:<br /> <input id="surname" ng-model="editDoctor.surname" type="text" required ng-value="originaleditDoctor.surname"/></label> <br>
+    <label>Specjalizacja:<br /><input id="specialization" ng-model="editDoctor.specialization" type="text" required ng-value="originaleditDoctor.specialization"/></label> <br>
+    <label>Adres:<br /><input id="address" ng-model="editDoctor.address" type="text" required ng-value="originaleditDoctor.address"/></label> <br>
+    <label>Miasto:<br /><input id="city" ng-model="editDoctor.city" type="text" required ng-value="originaleditDoctor.city"/></label> <br>
+    <label>Kod pocztowy:<br /><input id="postCode" ng-model="editDoctor.postCode" onkeypress="return addPostCode(this,event)" required ng-value="originaleditDoctor.postCode"/></label> <br>
+    <label>Województwo:<br /><input id="region" ng-model="editDoctor.region" required ng-value="originaleditDoctor.region"/></label> <br>
+  	<label>Kraj:<br /><input id="country" ng-model="editDoctor.country" type="text" required ng-value="originaleditDoctor.country"/></label> <br>
+    <label>Telefon:<br /><input id="phone" ng-model="editDoctor.phone" onkeypress="return addPhone(this,event)" required ng-value="originaleditDoctor.phone"/></label> <br>
   
 	
 	

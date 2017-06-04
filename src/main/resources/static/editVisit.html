@@ -43,28 +43,28 @@
 			<form name="edit" ng-submit="submitEditVisitForm()">
 	
    				
-   				 <label>Wybierz pacjenta:</label><br><select style="width:245px;" id="patientVisit" ng-model="editVisit.patientVisit" required>
+   				 <label>Wybierz pacjenta:</label><br><select style="width:245px;" id="patientVisit" ng-model="editVisit.patientVisit" required ng-value="originaleditVisit.patientVisit">
+				 <option value="">Brak</option>
+				 <option>Marcin</option>
+				 <option>bbbbb</option>
+				 <option>ccccc</option>
+				 </select><br><br>
+   				 
+   				 <label>Wybierz lekarza:</label><br><select style="width:245px;" id="doctorVisit" ng-model="editVisit.doctorVisit" required ng-value="originaleditVisit.doctorVisit">
 				 <option value="">Brak</option>
 				 <option>aaaaa</option>
 				 <option>bbbbb</option>
 				 <option>ccccc</option>
 				 </select><br><br>
    				 
-   				 <label>Wybierz lekarza:</label><br><select style="width:245px;" id="doctorVisit" ng-model="editVisit.doctorVisit" required>
-				 <option value="">Brak</option>
-				 <option>aaaaa</option>
-				 <option>bbbbb</option>
-				 <option>ccccc</option>
-				 </select><br><br>
-   				 
-   				 <label>Wybierz zabieg:</label><br><select multiple="multiple" style="width:245px;"  id="interventionVisit" ng-model="editVisit.interventionVisit" required>
+   				 <label>Wybierz zabieg:</label><br><select multiple="multiple" style="width:245px;"  id="interventionVisit" ng-model="editVisit.interventionVisit" required ng-value="originaleditVisit.interventionVisit">
 				 <option>aaaaa</option>
 				 <option>bbbbb</option>
 				 <option>ccccc</option>
 				 </select><br><br>
 				 
-   				 <label>Data wizyty(rrrr/mm/dd):<br /><input id="dateVisit" ng-model="editVisit.dateVisit" type="date" required/></label><br>
-   				 <label>Godzina wizyty:<br><input id="timeVisit" ng-model="editVisit.timeVisit" type="time" required /> </label><br>
+   				 <label>Data wizyty(rrrr/mm/dd):<br /><input id="dateVisit" ng-model="editVisit.dateVisit" type="date" required ng-value="originaleditVisit.dateVisit"/></label><br>
+   				 <label>Godzina wizyty:<br><input id="timeVisit" ng-model="editVisit.timeVisit" type="time" required ng-value="originaleditVisit.timeVisit"/> </label><br>
 
    				 
    				 
