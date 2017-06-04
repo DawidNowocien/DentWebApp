@@ -30,9 +30,6 @@
             window.location.replace('/startDoctorPage.html');
         };
 
-        //6. create resetForm() function. This will be called on Reset button click.  
-        $scope.resetForm = function () {
-            $scope.editVisit = angular.copy($scope.originaleditVisit);
-        };
+
 });
   

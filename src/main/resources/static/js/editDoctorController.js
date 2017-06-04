@@ -30,9 +30,6 @@
             window.location.replace('/startAdminPage.html');
         };
 
-        //6. create resetForm() function. This will be called on Reset button click.  
-        $scope.resetForm = function () {
-            $scope.editDoctor = angular.copy($scope.originaleditDoctor);
-        };
+
 });
   

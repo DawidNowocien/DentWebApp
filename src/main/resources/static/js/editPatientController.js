@@ -4,12 +4,17 @@
     //2. create controller
     app.controller("editPatientController", function ($scope, $http) {
 
-        //3. attach originalPatient model object
-       $scope.originaleditPatient = {
-name:'judasz',
-city: 'warszawa'
-         
-        };
+
+    	$http.get('data/dane.json').success(function(data){
+    		$scope.originaleditPatient = data;
+    	})
+    	
+    	//3. attach originalPatient model object
+//       $scope.originaleditPatient = {
+//name:'judasz',
+//city: 'warszawa'
+//         
+//        };
 
     	 //$scope.originaleditPatient = $http.get('data/dane.json');
     	
@@ -36,9 +41,6 @@ city: 'warszawa'
  
         };
 
-        //6. create resetForm() function. This will be called on Reset button click.  
-        $scope.resetForm = function () {
-            $scope.editPatient = angular.copy($scope.originaleditPatient);
-        };
+
 });
   

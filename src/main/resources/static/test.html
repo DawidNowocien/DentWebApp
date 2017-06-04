@@ -1,43 +1,92 @@
 <!DOCTYPE html>
-<html>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<body>
+<!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edytuj dane pacjenta | DentMed</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/footer.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
-<h2>Validation Example</h2>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#dateBirth" ).datepicker();
+  } );
+  </script>
 
-<form  ng-app="myApp"  ng-controller="validateCtrl"
-name="myForm" novalidate>
+</head>
+<body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:120%;">
 
-<p>Username:<br>
-  <input type="text" name="user" ng-model="user" required>
-  <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
-  <span ng-show="myForm.user.$error.required">Username is required.</span>
-  </span>
-</p>
 
-<p>Email:<br>
-  <input type="email" name="email" ng-model="email" required>
-  <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
-  <span ng-show="myForm.email.$error.required">Email is required.</span>
-  <span ng-show="myForm.email.$error.email">Invalid email address.</span>
-  </span>
-</p>
 
-<p>
-  <input type="submit"
-  ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||
-  myForm.email.$dirty && myForm.email.$invalid">
-</p>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/startDoctorPage.html">DentMed</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/startDoctorPage.html">Strona główna</a></li>
+     
+      <li class="active"><a href="/addPatient.html">Dodaj pacjenta</a></li>
+      <li><a href="/addVisit.html">Dodaj wizytę</a></li>
+      <li><a href="/searchPatient.html">Wyszukaj pacjenta</a></li>
+      <li><a href="/searchVisit.html">Wyszukaj wizytę</a></li>
+    </ul>
+  </div>
+</nav>
 
-</form>
 
-<script>
-var app = angular.module('myApp', []);
-app.controller('validateCtrl', function($scope) {
-    $scope.user = 'John Doe';
-    $scope.email = 'john.doe@gmail.com';
-});
-</script>
+<div id="form">
+
+<h1 align="center">Edytuj dane pacjenta</h1>
+			<div ng-controller="editPatientController">
+			<form name="edit" ng-submit="submitEditPatientForm()" >
+	
+   				 <label>Imię:<br><input id="name" ng-model="editPatient.name" type="text" required ng-value="originaleditPatient.name"/></label><br>
+    			 <label>Nazwisko:<br /> <input id="surname" ng-model="editPatient.surname" type="text" required/></label><br>
+    			
+    
+
+	
+	<button type="submit">Zapisz dane</button>
+	<button type="reset" ng-click="resetForm()">Resetuj dane</button>
+	</form>
+	
+
+</div>	
+	
+</div>
+
+
+
+<br><br><br><br>
+	<div id="footer">
+		<div id="container">
+			<p style="padding-left:400px; padding-top:20px">© DentMed Team</p>
+		</div>
+	</div>
+
+
+
+
+<script src="/webjars/angularjs/1.4.9/angular.js"></script>
+<script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
+<script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/controller.js"></script>
+<script src="/js/test.js"></script>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
+
 
 </body>
 </html>

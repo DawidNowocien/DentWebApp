@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Edytuj pacjenta | DentMed</title>
+    <title>Edytuj dane pacjenta | DentMed</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css">
@@ -52,23 +52,27 @@
 			<div ng-controller="editPatientController">
 			<form name="edit" ng-submit="submitEditPatientForm()" >
 	
-   				 <label>Imię:<br><input id="name" ng-model="editPatient.name" type="text" required/></label><br>
-    			 <label>Nazwisko:<br /> <input id="surname" ng-model="editPatient.surname" type="text" required/></label><br>
-    			 <label>Pesel:<br /> <input id="pesel" ng-model="editPatient.pesel" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11" required/></label><br>
-    			 <label>Data urodzenia(rrrr/mm/dd):<br /><input type="text" id="dateBirth" ng-model="editPatient.dateBirth" required/></label><br>
-    			 <label>Adres:<br /><input id="address" ng-model="editPatient.address" type="text" required/></label><br>
-    			 <label>Miasto:<br /><input id="city" ng-model="editPatient.city" type="text" required/></label><br>
-    			 <label>Kod pocztowy:<br /><input id="postCode" ng-model="editPatient.postCode" onkeypress="return addPostCode(this,event)" required /></label><br>
-    			 <label>Województwo:<br /><input id="region" ng-model="editPatient.region" required/></label><br>
-  				 <label>Kraj:<br /><input id="country" ng-model="editPatient.country" type="text" required/></label><br>
-   			 	 <label>Telefon:<br /><input id="phone" ng-model="editPatient.phone" onkeypress="return addPhone(this,event)" required/></label><br>
-    			 <label>Email:<br /><input id="mail" ng-model="editPatient.mail" type="email" required/></label><br>
+   				 <label>Imię:<br><input id="name" ng-model="editPatient.name" type="text" required ng-value="originaleditPatient.name"/></label><br>
+    			 <label>Nazwisko:<br /> <input id="surname" ng-model="editPatient.surname" type="text" required ng-value="originaleditPatient.surname"/></label><br>
+    			 <label>Pesel:<br /> <input id="pesel" ng-model="editPatient.pesel" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11" required ng-value="originaleditPatient.pesel"/></label><br>
+    			 <label>Data urodzenia(rrrr/mm/dd):<br /><input type="text" id="dateBirth" ng-model="editPatient.dateBirth" required ng-value="originaleditPatient.dateBirth"/></label><br>
+    			 <label>Adres:<br /><input id="address" ng-model="editPatient.address" type="text" required ng-value="originaleditPatient.address"/></label><br>
+    			 <label>Miasto:<br /><input id="city" ng-model="editPatient.city" type="text" required ng-value="originaleditPatient.city"/></label><br>
+    			 <label>Kod pocztowy:<br /><input id="postCode" ng-model="editPatient.postCode" onkeypress="return addPostCode(this,event)" required ng-value="originaleditPatient.postCode"/></label><br>
+    			 <label>Województwo:<br /><input id="region" ng-model="editPatient.region" required ng-value="originaleditPatient.region"/></label><br>
+  				 <label>Kraj:<br /><input id="country" ng-model="editPatient.country" type="text" required ng-value="originaleditPatient.country"/></label><br>
+   			 	 <label>Telefon:<br /><input id="phone" ng-model="editPatient.phone" onkeypress="return addPhone(this,event)" required ng-value="originaleditPatient.phone"/></label><br>
+    			 <label>Email:<br /><input id="mail" ng-model="editPatient.mail" type="email" required ng-value="originaleditPatient.mail"/></label><br>
     
 
 	
 	<button type="submit">Zapisz dane</button>
-	<button type="reset" ng-click="resetForm()">Resetuj dane</button>
-	</form>
+	<a href="/startDoctorPage.html"><button type="submit">Anuluj</button></a>
+		
+			</form>
+	
+   			
+		
 	
 
 </div>	
