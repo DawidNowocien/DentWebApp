@@ -6,24 +6,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dodaj pacjenta | DentMed</title>
+    <title>Dodaj wizytę | DentMed</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/form.css">
     <link rel="stylesheet" href="/css/footer.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#dateBirth" ).datepicker();
-  } );
-  </script>
-
+    
 </head>
 <body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:120%;">
 
@@ -37,8 +27,8 @@
     <ul class="nav navbar-nav">
       <li><a href="/startDoctorPage.html">Strona główna</a></li>
      
-      <li class="active"><a href="/addPatient.html">Dodaj pacjenta</a></li>
-      <li><a href="/addVisit.html">Dodaj wizytę</a></li>
+      <li><a href="/addPatient.html">Dodaj pacjenta</a></li>
+      <li class="active"><a href="/addVisit.html">Dodaj wizytę</a></li>
       <li><a href="/searchPatient.html">Wyszukaj pacjenta</a></li>
       <li><a href="/searchVisit.html">Wyszukaj wizytę</a></li>
     </ul>
@@ -48,13 +38,41 @@
 
 <div id="form">
 
-<h1 align="center">Wprowadź dane pacjenta</h1>
-			<div ng-controller="patientController">
-			<form name="addPatient" ng-submit="submitPatientForm()" >
+<h1 align="center">Wprowadź dane wizyty</h1>
+			<div ng-controller="editVisitController">
+			<form name="addVisit" ng-submit="submitVisitForm()">
 	
    				
-    			 <label>Data urodzenia(rrrr/mm/dd):<br /><input type="text" id="dateBirt" ng-model="newPatient.dateBirth" onkeypress="return addDate(this,event)" required/></label><br>
-    			
+   				 <label>Wybierz pacjenta:</label><br><select style="width:245px;" id="patientVisit" ng-model="newVisit.patientVisit" required>
+				 <option value="">Brak</option>
+				 <option>aaaaa</option>
+				 <option>bbbbb</option>
+				 <option>ccccc</option>
+				 </select><br><br>
+   				 
+   				 <label>Wybierz lekarza:</label><br><select style="width:245px;" id="doctorVisit" ng-model="newVisit.doctorVisit" required>
+				 <option value="">Brak</option>
+				 <option>aaaaa</option>
+				 <option>bbbbb</option>
+				 <option>ccccc</option>
+				 </select><br><br>
+   				 
+   				 <label>Wybierz zabieg:</label><br><select multiple="multiple" style="width:245px;"  id="interventionVisit" ng-model="newVisit.interventionVisit" required>
+				 <option>aaaaa</option>
+				 <option>bbbbb</option>
+				 <option>ccccc</option>
+				 </select><br><br>
+				 
+   				 <label>Data wizyty(dd/mm/rrrr):<br /><input id="dateVisit" ng-model="newVisit.dateVisit" type="text"  onkeypress="return addDate(this,event)" required/></label><br>
+   				 <label>Godzina wizyty:<br><input id="timeVisit" ng-model="newVisit.timeVisit" type="text" onkeypress="return addTime(this,event)" required /> </label><br>
+
+   				 
+   		
+<select>
+<option ng-repeat="x in originaleditVisit">{{x}}</option>
+</select>		 
+   				 
+    
 	
 	<button type="submit">Zapisz dane</button>
 	<button type="reset" ng-click="resetForm()">Resetuj dane</button>
@@ -82,9 +100,7 @@
 <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/controller.js"></script>
-<script src="/js/patientController.js"></script>
+<script src="/js/test.js"></script>
 <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
-
-
 </body>
 </html>
