@@ -1,12 +1,12 @@
 package pl.dentsys.patient.domain;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -22,9 +22,9 @@ public class PatientEntity implements Serializable{
 	
 	@Id
 	@SequenceGenerator(name="Patient_Gen", sequenceName="PATIENT_SEQ")
-	@GeneratedValue(generator="Patient_Gen")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="Patient_Gen")
 	@Column(name="ID")
-	private BigDecimal id;
+	private Long id;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -40,13 +40,13 @@ public class PatientEntity implements Serializable{
 
 	private String name;
 
-	private BigDecimal pesel;
+	private Long pesel;
 
 	@Column(name="PHONE_NUMBER1")
-	private BigDecimal phoneNumber1;
+	private String phoneNumber1;
 
 	@Column(name="PHONE_NUMBER2")
-	private BigDecimal phoneNumber2;
+	private String phoneNumber2;
 
 	@Column(name="POSTAL_CODE")
 	private String postalCode;

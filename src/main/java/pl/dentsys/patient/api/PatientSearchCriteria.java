@@ -6,7 +6,7 @@ import lombok.Data;
 public class PatientSearchCriteria {
 	
 	private String name;
-	private String surename;
+	private String surname;
 	private Long pesel;
 	
 

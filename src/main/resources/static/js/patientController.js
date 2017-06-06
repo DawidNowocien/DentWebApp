@@ -26,7 +26,7 @@
             var onError = function (data, status, headers, config) {
                 alert('Wystąpił błąd podczas zapisywania danych.');
             }
-            $http.post('add-patient', $scope.newPatient)
+            $http.post('patient', $scope.newPatient)
             .success(onSuccess)
             .error(onError); 
             window.location.replace('/startDoctorPage.html');
