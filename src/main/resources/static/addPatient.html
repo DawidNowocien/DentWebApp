@@ -64,15 +64,15 @@
     			 <label>Kod pocztowy:<br /><input id="postCode" name="postCode" ng-model="newPatient.postCode" ng-pattern="postCode" required/></label>
     			 <span class="error" ng-show="addPatient.postCode.$error.pattern">Uzupełnij kod pocztowy wzoru [xx-xxx]</span><br>
     			 </div>
-    			 <label>Województwo:<br /><input id="region" ng-model="newPatient.region" required/></label><br>
+    			 <label>Województwo:<br /><input id="region" ng-model="newPatient.province" required/></label><br>
   				 <label>Kraj:<br /><input id="country" ng-model="newPatient.country" type="text" required/></label><br>
    			 	 
    			 	 <div>
-   			 	 <label>Telefon (xxx-xxx-xxx) (1):<br /><input id="phone" name="phone" ng-pattern="phoneNumber" ng-model="newPatient.phone"  required/></label>
+   			 	 <label>Telefon (xxx-xxx-xxx) (1):<br /><input id="phone" name="phone" ng-pattern="phoneNumber" ng-model="newPatient.phoneNumber1"  required/></label>
    			 	 <span class="error" ng-show="addPatient.phone.$error.pattern">Uzupełnij numer według wzoru [xxx-xxx-xxx]</span>
    			 	 </div>
    			 	  <div>
-   			 	 <label>Telefon (xxx-xxx-xxx) (2):<br /><input id="phone2" name="phone2" ng-pattern="phoneNumber" ng-model="newPatient.phone2"  required/></label>
+   			 	 <label>Telefon (xxx-xxx-xxx) (2):<br /><input id="phone" name="phone2" ng-pattern="phoneNumber" ng-model="newPatient.phoneNumber2"  required/></label>
    			 	 <span class="error" ng-show="addPatient.phone2.$error.pattern">Uzupełnij numer według wzoru [xxx-xxx-xxx]</span>
    			 	 </div>
     			 
