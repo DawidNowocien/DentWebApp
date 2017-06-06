@@ -228,3 +228,5 @@ target/classes/META-INF/maven/pl.dentsys/DentWebApp/pom.properties
 .factorypath
 *.classpath
 .settings/org.eclipse.jdt.core.prefs
+target/classes/META-INF/MANIFEST.MF
+target/classes/pl/dentsys/Application.class

@@ -1,6 +1,5 @@
 package pl.dentsys.patient.service;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -12,6 +11,7 @@ import pl.dentsys.patient.api.PatientSearchCriteria;
 import pl.dentsys.patient.api.PatientSimpleDto;
 import pl.dentsys.patient.domain.PatientEntity;
 import pl.dentsys.patient.domain.PatientRepository;
+import pl.dentsys.patient.domain.PatientSpecification;
 
 @Service
 public class PatientService {
@@ -50,7 +50,9 @@ public class PatientService {
 	
 	public List<PatientDto> searchPatient(PatientSearchCriteria searchCriteria){
 		
-		List<PatientEntity> patientEntityList=new ArrayList<>();
+		PatientSpecification spec=new PatientSpecification(searchCriteria);
+		
+		List<PatientEntity> patientEntityList=patientRepo.findAll(spec);
 		
 		return patientAssembler.patientToDtoList(patientEntityList);
 		
