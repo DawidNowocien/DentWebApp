@@ -4,8 +4,11 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -25,9 +28,10 @@ public class VisitTreatmentEntity implements Serializable {
 	@Id
 	@Column(name="TREATMENT_ID")
 	private Long treatmentId;
-
+	
 	@Id
-	@Column(name="VISIT_ID")
-	private Long visitId;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "VISIT_ID", nullable = false)
+	public VisitEntity visit;
 
 }

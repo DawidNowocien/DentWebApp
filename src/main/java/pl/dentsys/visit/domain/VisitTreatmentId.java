@@ -12,7 +12,7 @@ public class VisitTreatmentId implements Serializable{
 	 */
 	private static final long serialVersionUID = 4825769479309089569L;
 	
-	private Long visitId;
+	private Long visit;
 	private Long treatmentId;
 
 }
