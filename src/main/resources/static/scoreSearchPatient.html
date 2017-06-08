@@ -8,6 +8,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
  <link rel="stylesheet" href="/css/form.css">
 	<script src="js/app.js"></script>
+	 <link rel="stylesheet" href="/css/footer.css">
 </head>
 <body  style="background-image: url('images/gabinet2.jpg');background-size:120%;">
 
@@ -47,12 +48,13 @@
 
 	<tr data-ng-repeat="station in stations">
 	
-
-	<td ng-model="searchPatient.name">{{station.imie}}</td>
-	<td ng-model="searchPatient.surname">{{station.nazwisko}}</td>
-	<td ng-model="searchPatient.pesel">{{station.pesel}}</td>
-	<td><button ng-click="editContact(station)">Edytuj dane</button></td>
-
+	<div>
+	<td style="vertical-align: middle; font-size:16px" ng-model="searchPatient.name">{{station.name}}</td>
+	<td style="vertical-align: middle; font-size:16px" ng-model="searchPatient.surname">{{station.surname}}</td>
+	<td style="vertical-align: middle; font-size:16px" ng-model="searchPatient.pesel">{{station.pesel}}</td>
+	<td><a href="editPatient.html#id?{{station.id}}"><button  type="submit">Edytuj dane</button></a></td>
+	<td><button  type="submit" ng-click="deletePatient()">Usuń </button></td>
+</div>
 	</div>
 	<td></td>
 	</tr>
@@ -63,10 +65,16 @@
 	</div>
 
 </div>
+
 </div>
 
 
-
+<br><br><br><br><br><br><br><br><br><br><br><br>
+	<div id="footer">
+		<div id="container">
+			<p style="padding-left:400px; padding-top:20px">© DentMed Team</p>
+		</div>
+	</div>
 
 
        

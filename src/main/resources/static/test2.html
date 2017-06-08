@@ -1,12 +1,10 @@
+
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
+<html ng-app="myApp">
 <head>
-    <meta charset="utf-8">
+     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dodaj pacjenta | DentMed</title>
+    <title>Dodaj wizytę | DentMed</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css">
@@ -14,74 +12,16 @@
     <link rel="stylesheet" href="/css/footer.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<style>
-    .error {
-      color: red;
-    }
-  </style>
 </head>
-<body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:140%;">
+<body ng-controller="RoutingController">
 
-
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/startDoctorPage.html">DentMed</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="/startDoctorPage.html">Strona główna</a></li>
-     
-      <li class="active"><a href="/addPatient.html">Dodaj pacjenta</a></li>
-      <li><a href="/addVisit.html">Dodaj wizytę</a></li>
-      <li><a href="/searchPatient.html">Wyszukaj pacjenta</a></li>
-      <li><a href="/searchVisit.html">Wyszukaj wizytę</a></li>
-    </ul>
-  </div>
-</nav>
-
-
-<div id="form">
-
-<h1 align="center">Wprowadź dane pacjenta</h1>
-			<div ng-controller="patientController">
-			<form name="addPatient" ng-submit="submitPatientForm()" >
-	
-   			    <div>
-   			 	 <label>Telefon (1):<br /><input id="phone" name="phone" ng-model="newPatient.phone" ng-pattern="phoneNumber" required /></label><br>
-   			 	       <span class="error" ng-show="addPatient.phone.$error.required">Required!</span>
-      <span class="error" ng-show="addPatient.phone.$error.minlength">Phone no not less that 10 char.</span>
-      <span class="error" ng-show="addPatient.phone.$error.maxlength">Phone no not more than 11 char.</span>
-      <br><span class="error" ng-show="addPatient.phone.$error.pattern">Please match pattern [+91-036-78658 || 91-036-78658]</span>
-   			 	     </div>
-   			 	 <label>Telefon (2):<br /><input id="phone2" ng-model="newPatient.phone2" onkeypress="return addPhone(this,event)"/></label><br>
-    		
-    
-
-	
-	<button type="submit">Zapisz dane</button>
-	<button type="reset" ng-click="resetForm()">Resetuj dane</button>
-	</form>
-	
-
-</div>	
-	
-</div>
-
-
-
-<br><br><br><br>
-	<div id="footer">
-		<div id="container">
-			<p style="padding-left:400px; padding-top:20px">© DentMed Team</p>
-		</div>
-	</div>
-
-
+<h1>Using $location Service</h1>
+<label>First Parameter: </label> {{firstParameter}} <br/> <br/>
+<label>Second Parameter: </label> {{secondParameter}} <br/> <br/>
+<hr/>
+<h1>Using $routeParams</h1>
+<label>First Parameter: </label>{{param1}} <br/> <br/>
+<label>Second Parameter</label> {{param2}}
 
 
 <script src="/webjars/angularjs/1.4.9/angular.js"></script>
@@ -91,7 +31,6 @@
 <script src="/js/controller.js"></script>
 <script src="/js/test2.js"></script>
 <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
-
-
 </body>
 </html>
+

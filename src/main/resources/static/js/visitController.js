@@ -1,11 +1,16 @@
 //1. create app module 
     var app = angular.module('app', []);
 
+    
+    
+    
+    
     //2. create controller
     app.controller("visitController", function ($scope, $http) {
 
         //3. attach originalvisit model object
         $scope.originalnewVisit = {
+        		
         
         };
 

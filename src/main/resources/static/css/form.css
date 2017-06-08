@@ -4,7 +4,7 @@
 }
 
 #form {
-        width:560px; /* ustawiamy szerokoœæ formularza */
+        width:660px; /* ustawiamy szerokoœæ formularza */
         margin:0 auto; /* je¿eli nasz formularz ma ustawion¹ szerokoœæ wyœrodkowujemy go */
         background-color:#fff; /* dodajemy kolor t³a naszemu formularzowi */
         border:2px solid #ccc; /* dodajemy obramowanie o szerokoœci 2px */
@@ -36,7 +36,7 @@
 	border-radius:3px; /* dodajemy zaokraglone rogi */
 	border:1px solid #ccc; /* dodajemy obramowanie */
 	margin-bottom:25px; /* dodajemy margines dolny */
-	width:245px; /* ustalamy szerokoœæ */
+	width:305px; /* ustalamy szerokoœæ */
 
 	
 }
