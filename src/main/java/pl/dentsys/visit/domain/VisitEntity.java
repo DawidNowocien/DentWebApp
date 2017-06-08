@@ -50,12 +50,8 @@ public class VisitEntity implements Serializable{
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "visit",cascade = CascadeType.ALL)
 	public List<VisitTreatmentEntity> treatmentList;
 	
-	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "PATIENT_ID",insertable=false, updatable=false)
 	public PatientEntity patient;
-	
-	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
-	@JoinColumn(name = "DOCTOR_ID",insertable=false, updatable=false)
-	public DoctorEntity doctor;
 
 }

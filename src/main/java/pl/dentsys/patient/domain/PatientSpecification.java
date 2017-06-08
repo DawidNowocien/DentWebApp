@@ -34,8 +34,7 @@ public class PatientSpecification implements Specification<PatientEntity>{
 		if(searchCriteria.getPesel()!=null){
 			predicates.add(cb.equal(root.get("pesel"), searchCriteria.getPesel()));
 		}
-		
-		
+				
 		return cb.and(predicates.toArray(new Predicate[0]));
 	}
 	

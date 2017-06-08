@@ -7,8 +7,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import pl.dentsys.visit.api.TreatmentDict;
+import pl.dentsys.treatment.api.TreatmentDict;
 import pl.dentsys.visit.api.VisitDto;
+import pl.dentsys.visit.api.VisitSearchCriteria;
 import pl.dentsys.visit.api.VisitSimpleDto;
 import pl.dentsys.visit.domain.VisitEntity;
 import pl.dentsys.visit.domain.VisitRepository;
@@ -48,5 +49,34 @@ public class VisitService {
 		
 	}
 
+//	public List<VisitDto> searchVisit(VisitSearchCriteria searchCriteria){
+//		
+//		List<VisitEntity> visitEntityList=visitRepo.findVisitsByDoctorAndPatientidAndDates(searchCriteria);
+//		
+//		return visitAssembler.visitToDtoList(visitEntityList);
+//		
+//	}
+	
+	public void updateVisit(VisitSimpleDto visit,Long visitId){
+		
+		VisitEntity visitEntity=visitRepo.findOne(visitId);
+		visitEntity.setDoctorId(visit.getDoctorId());
+		visitEntity.setPatientId(visit.getPatientId());
+		visitEntity.setVisitDate(new Date());
+		visitEntity.getTreatmentList().clear();
+		
+		for(TreatmentDict dict:visit.getTreatmentList()){
+			VisitTreatmentEntity visitTreat=new VisitTreatmentEntity();
+			visitTreat.setTreatmentId(dict.getId());
+			visitTreat.setVisit(visitEntity);
+			visitEntity.getTreatmentList().add(visitTreat);
+		}
+		visitRepo.saveAndFlush(visitEntity);
+	}
+	
+	public void deleteVisit(Long visitId){
+		visitRepo.delete(visitId);
+	}
 
+	
 }

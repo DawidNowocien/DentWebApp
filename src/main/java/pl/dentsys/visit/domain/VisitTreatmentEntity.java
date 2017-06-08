@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
+import pl.dentsys.treatment.domain.TreatmentDict;
 
 
 /**
@@ -33,5 +34,8 @@ public class VisitTreatmentEntity implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "VISIT_ID", nullable = false)
 	public VisitEntity visit;
-
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "TREATMENT_ID",insertable=false, updatable=false)
+	public TreatmentDict treatmentDict;
 }

@@ -38,7 +38,7 @@ public class DoctorEntity {
 
 	private String name;
 
-	private BigDecimal pesel;
+	private Long pesel;
 
 	@Column(name="PHONE_NUMBER1")
 	private BigDecimal phoneNumber1;

@@ -1,4 +1,4 @@
-package pl.dentsys.visit.api;
+package pl.dentsys.treatment.api;
 
 import lombok.Data;
 
