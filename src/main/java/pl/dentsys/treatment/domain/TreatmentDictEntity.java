@@ -17,7 +17,7 @@ import lombok.Data;
 @Entity
 @Table(name="TREATMENT_DICT")
 @Data
-public class TreatmentDict implements Serializable {
+public class TreatmentDictEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
