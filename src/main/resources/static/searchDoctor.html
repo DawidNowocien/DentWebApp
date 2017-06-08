@@ -35,26 +35,22 @@
 <div id="form">
 
 <h1 align="center">Dane lekarza</h1>
-			<div ng-controller="doctorController">
-			<form name="addDoctor" ng-submit="submitDoctorForm()">
+			<div ng-controller="searchDoctorController">
+			<form name="addDoctor" ng-submit="submitSearchDoctorForm()">
 	
-    <label>Imię:<br><input id="name" ng-model="newDoctor.name" type="text" required/></label> <br>
-    <label>Nazwisko:<br /> <input id="surname" ng-model="newDoctor.surname" type="text" required/></label> <br>
-    <label>Specjalizacja:<br /><input id="specialization" ng-model="newDoctor.specialization" type="text" required/></label> <br>
-    <label>Adres:<br /><input id="address" ng-model="newDoctor.address" type="text" required/></label> <br>
-    <label>Miasto:<br /><input id="city" ng-model="newDoctor.city" type="text" required/></label> <br>
-    <label>Kod pocztowy:<br /><input id="postCode" ng-model="newDoctor.postCode" onkeypress="return addPostCode(this,event)" required/></label> <br>
-    <label>Województwo:<br /><input id="region" ng-model="newDoctor.region" required/></label> <br>
-  	<label>Kraj:<br /><input id="country" ng-model="newDoctor.country" type="text" required/></label> <br>
-    <label>Telefon:<br /><input id="phone" ng-model="newDoctor.phone" onkeypress="return addPhone(this,event)" required/></label> <br>
+    <label>Imię:<br><input id="name" ng-model="searchDoctor.name" type="text" required/></label> <br>
+    <label>Nazwisko:<br /> <input id="surname" ng-model="searchDoctor.surname" type="text" required/></label> <br>
+    <label>Pesel:<br /> <input id="pesel" ng-model="searchDoctor.pesel" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11"/></label><br>
+    <label>Specjalizacja:<br /><input id="specialization" ng-model="searchDoctor.specialization" type="text" required/></label> <br>
+
   
 	
 	
 	
-	<button type="submit">Zapisz dane</button>
-	<button type="reset" ng-click="resetForm()">Resetuj dane</button>
+
 	</form>
-	
+	<a href="/scoreSearchDoctor.html?name={{searchDoctor.name}}&surname={{searchDoctor.surname}}&pesel={{searchDoctor.pesel}}&specialization={{searchDoctor.specialization}}"><button type="submit">Wyszukaj</button></a>
+	<a href="/startAdminPage.html"><button type="submit">Anuluj</button></a>	
 
 </div>	
 	
