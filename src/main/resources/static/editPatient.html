@@ -52,30 +52,30 @@
 			<div ng-controller="editPatientController">
 			<form name="edit" ng-submit="submitEditPatientForm()" >
 	
-   				 <label>Imię:<br><input id="name" ng-model="editPatient.name" type="text" required ng-value="originaleditPatient.name"/></label><br>
-    			 <label>Nazwisko:<br /> <input id="surname" ng-model="editPatient.surname" type="text" required ng-value="originaleditPatient.surname"/></label><br>
-    			 <label>Pesel:<br /> <input id="pesel" ng-model="editPatient.pesel" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11" required ng-value="originaleditPatient.pesel"/></label><br>
+   				 <label>Imię:<br><input id="name" ng-model="originaleditPatient.name" type="text" required ng-value="originaleditPatient.name"/></label><br>
+    			 <label>Nazwisko:<br /> <input id="surname" ng-model="originaleditPatient.surname" type="text" required ng-value="originaleditPatient.surname"/></label><br>
+    			 <label>Pesel:<br /> <input id="pesel" ng-model="originaleditPatient.pesel" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11" required ng-value="originaleditPatient.pesel"/></label><br>
     			 <div>
-    			 <label>Data urodzenia(dd/mm/rrrr):<br /><input type="text" id="dateBirth" name="birth" ng-model="editPatient.dateBirth" ng-pattern="Birth" required ng-value="originaleditPatient.dateBirth"/></label>
+    			 <label>Data urodzenia(dd/mm/rrrr):<br /><input type="text" id="dateBirth" name="birth" ng-model="originaleditPatient.dateBirth" ng-pattern="Birth" required ng-value="originaleditPatient.dateBirth"/></label>
     			 <span class="error" ng-show="edit.birth.$error.pattern">Uzupełnij datę według wzoru [dd/mm/rrrr]</span><br>
     			 </div>
-    			 <label>Adres:<br /><input id="address" ng-model="editPatient.address" type="text" required ng-value="originaleditPatient.address"/></label><br>
-    			 <label>Miasto:<br /><input id="city" ng-model="editPatient.city" type="text" required ng-value="originaleditPatient.city"/></label><br>
+    			 <label>Adres:<br /><input id="address" ng-model="originaleditPatient.address" type="text" required ng-value="originaleditPatient.address"/></label><br>
+    			 <label>Miasto:<br /><input id="city" ng-model="originaleditPatient.city" type="text" required ng-value="originaleditPatient.city"/></label><br>
     			 <div> 
-    			 <label>Kod pocztowy:<br /><input id="postCode" name="postCode" ng-model="editPatient.postCode" ng-pattern="postCode" required ng-value="originaleditPatient.postCode"/></label>
+    			 <label>Kod pocztowy:<br /><input id="postCode" name="postCode" ng-model="originaleditPatient.postCode" ng-pattern="postCode" required ng-value="originaleditPatient.postCode"/></label>
     			 <span class="error" ng-show="edit.postCode.$error.pattern">Uzupełnij kod pocztowy wzoru [xx-xxx]</span><br>
     			 </div>
-    			 <label>Województwo:<br /><input id="region" ng-model="editPatient.province" required ng-value="originaleditPatient.province"/></label><br>
-  				 <label>Kraj:<br /><input id="country" ng-model="editPatient.country" type="text" required ng-value="originaleditPatient.country"/></label><br>
+    			 <label>Województwo:<br /><input id="region" ng-model="originaleditPatient.province" required ng-value="originaleditPatient.province"/></label><br>
+  				 <label>Kraj:<br /><input id="country" ng-model="originaleditPatient.country" type="text" required ng-value="originaleditPatient.country"/></label><br>
    			 	 <div>
-   			 	 <label>Telefon (xxx-xxx-xxx) (1):<br /><input id="phone" name="phone" ng-pattern="phoneNumber" ng-model="editPatient.phoneNumber1"  required ng-value="originaleditPatient.phoneNumber1"/></label>
+   			 	 <label>Telefon (xxx-xxx-xxx) (1):<br /><input id="phone" name="phone" ng-pattern="phoneNumber" ng-model="originaleditPatient.phoneNumber1"  required ng-value="originaleditPatient.phoneNumber1"/></label>
    			 	 <span class="error" ng-show="edit.phone.$error.pattern">Uzupełnij numer według wzoru [xxx-xxx-xxx]</span>
    			 	 </div>
    			 	 <div>
-   			 	 <label>Telefon (xxx-xxx-xxx) (2):<br /><input id="phone" name="phone2" ng-pattern="phoneNumber" ng-model="editPatient.phoneNumber2"  required ng-value="originaleditPatient.phoneNumber2"/></label>
+   			 	 <label>Telefon (xxx-xxx-xxx) (2):<br /><input id="phone" name="phone2" ng-pattern="phoneNumber" ng-model="originaleditPatient.phoneNumber2"  required ng-value="originaleditPatient.phoneNumber2"/></label>
    			 	 <span class="error" ng-show="edit.phone2.$error.pattern">Uzupełnij numer według wzoru [xxx-xxx-xxx]</span>
    			 	 </div>
-    			 <label>Email:<br /><input id="mail" ng-model="editPatient.mail" type="email" required ng-value="originaleditPatient.mail"/></label><br>
+    			 <label>Email:<br /><input id="mail" ng-model="originaleditPatient.mail" type="email" required ng-value="originaleditPatient.mail"/></label><br>
     
 				
 
