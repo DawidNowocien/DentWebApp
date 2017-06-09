@@ -1,13 +1,15 @@
 package pl.dentsys.doctor.domain;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -41,10 +43,10 @@ public class DoctorEntity {
 	private Long pesel;
 
 	@Column(name="PHONE_NUMBER1")
-	private BigDecimal phoneNumber1;
+	private String phoneNumber1;
 
 	@Column(name="PHONE_NUMBER2")
-	private BigDecimal phoneNumber2;
+	private String phoneNumber2;
 
 	@Column(name="POSTAL_CODE")
 	private String postalCode;
@@ -52,11 +54,15 @@ public class DoctorEntity {
 	private String province;
 
 	@Column(name="SPECIALIZATION_ID")
-	private BigDecimal specializationId;
+	private Long specializationId;
 
 	@Column(name="STREET_ADDRESS")
 	private String streetAddress;
 
 	private String surname;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "SPECIALIZATION_ID",insertable=false, updatable=false)
+	public SpecializationDictEntity specializationDict;
 
 }

@@ -7,9 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import pl.dentsys.treatment.api.TreatmentDict;
 import pl.dentsys.visit.api.VisitDto;
-import pl.dentsys.visit.api.VisitSearchCriteria;
 import pl.dentsys.visit.api.VisitSimpleDto;
 import pl.dentsys.visit.domain.VisitEntity;
 import pl.dentsys.visit.domain.VisitRepository;
@@ -31,9 +29,9 @@ public class VisitService {
 		visitEntity.setPatientId(visit.getPatientId());
 		visitEntity.setVisitDate(new Date());
 		List<VisitTreatmentEntity> treatmentList=new ArrayList<>();
-		for(TreatmentDict dict:visit.getTreatmentList()){
+		for(Long treatmentId:visit.getTreatmentList()){
 			VisitTreatmentEntity visitTreat=new VisitTreatmentEntity();
-			visitTreat.setTreatmentId(dict.getId());
+			visitTreat.setTreatmentId(treatmentId);
 			visitTreat.setVisit(visitEntity);
 			treatmentList.add(visitTreat);
 		}
@@ -65,9 +63,9 @@ public class VisitService {
 		visitEntity.setVisitDate(new Date());
 		visitEntity.getTreatmentList().clear();
 		
-		for(TreatmentDict dict:visit.getTreatmentList()){
+		for(Long treatmentId:visit.getTreatmentList()){
 			VisitTreatmentEntity visitTreat=new VisitTreatmentEntity();
-			visitTreat.setTreatmentId(dict.getId());
+			visitTreat.setTreatmentId(treatmentId);
 			visitTreat.setVisit(visitEntity);
 			visitEntity.getTreatmentList().add(visitTreat);
 		}
