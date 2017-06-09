@@ -48,11 +48,7 @@ public class VisitService {
 	}
 
 	public List<VisitDto> searchVisit(VisitSearchCriteria searchCriteria){
-		
-//		LocalDateTime localDate=LocalDateTime.now();
-//		
-//		searchCriteria.setDateFrom(localDate.minusDays(20));
-//		searchCriteria.setDateTo(localDate.plusDays(20));
+	
 		
 		List<VisitEntity> visitEntityList=new ArrayList<>();
 		

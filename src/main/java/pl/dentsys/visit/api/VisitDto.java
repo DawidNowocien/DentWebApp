@@ -13,7 +13,7 @@ public class VisitDto{
 	private Long visitId;
 	private PersonShort doctor;
 	private PersonShort patient;
-	@JsonFormat(pattern = "dd/mm/rrrr HH:mm")
+	@JsonFormat(pattern = "dd/mm/yyyy HH:mm")
 	private String visitDate;
 	private List<TreatmentDict> treatmentList;
 
