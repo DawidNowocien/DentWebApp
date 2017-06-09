@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import pl.dentsys.common.Dict;
 import pl.dentsys.doctor.api.DoctorDto;
 import pl.dentsys.doctor.domain.DoctorEntity;
+import pl.dentsys.doctor.domain.SpecializationDictEntity;
 
 @Component
 public class DoctorDtoAssembler {
@@ -42,6 +43,18 @@ public class DoctorDtoAssembler {
 		}
 				
 		return doctorList;		
+	}
+	
+	public Dict specializationToDto(SpecializationDictEntity entity){
+		return new Dict(entity.getId(),entity.getLabel());
+	}
+	
+	public List<Dict> specializationToDtoList(List<SpecializationDictEntity> entityList){
+		List<Dict> dtoList=new ArrayList<>();
+		for(SpecializationDictEntity entity:entityList){
+			dtoList.add(specializationToDto(entity));
+		}
+		return dtoList;
 	}
 
 }

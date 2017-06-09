@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import pl.dentsys.common.Dict;
 import pl.dentsys.doctor.api.DoctorDto;
 import pl.dentsys.doctor.api.DoctorSearchCriteria;
 import pl.dentsys.doctor.api.DoctorSimpleDto;
@@ -53,6 +54,21 @@ public class DoctorController {
     	
     	return doctorService.searchDoctor(searchCriteria);
         
+    }
+    
+   
+    @RequestMapping(value = "/doctor/specialization/dict", method = RequestMethod.GET)
+    public List<Dict> getSpecializationDict() {
+  	
+    	return doctorService.getSpecializationDict();
+      
+    }
+    
+    @RequestMapping(value = "/doctor/specialization/dict/{specializationId}", method = RequestMethod.GET)
+    public Dict getSingleSpecialization(@PathVariable Long specializationId) {
+  	
+    	return doctorService.getSingleSpecialization(specializationId);
+      
     }
 
 }

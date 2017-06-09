@@ -6,18 +6,24 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import pl.dentsys.common.Dict;
 import pl.dentsys.doctor.api.DoctorDto;
 import pl.dentsys.doctor.api.DoctorSearchCriteria;
 import pl.dentsys.doctor.api.DoctorSimpleDto;
 import pl.dentsys.doctor.domain.DoctorEntity;
 import pl.dentsys.doctor.domain.DoctorRepository;
 import pl.dentsys.doctor.domain.DoctorSpecification;
+import pl.dentsys.doctor.domain.SpecializationDictEntity;
+import pl.dentsys.doctor.domain.SpecializationRepository;
 
 @Service
 public class DoctorService {
 	
 	@Autowired
 	private DoctorRepository doctorRepo;
+	
+	@Autowired
+	private SpecializationRepository  specRepo;
 	
 	@Autowired
 	private DoctorDtoAssembler doctorAssembler;
@@ -80,6 +86,20 @@ public class DoctorService {
 	
 	public void deleteDoctor(Long doctorId){
 		doctorRepo.delete(doctorId);
+	}
+	
+	public List<Dict> getSpecializationDict(){
+		
+		List<SpecializationDictEntity> entityList=specRepo.findAll();
+		
+		return doctorAssembler.specializationToDtoList(entityList);
+	}
+	
+	public Dict getSingleSpecialization(Long specializationId){
+		
+		SpecializationDictEntity entity=specRepo.findOne(specializationId);
+		
+		return doctorAssembler.specializationToDto(entity);
 	}
 
 }

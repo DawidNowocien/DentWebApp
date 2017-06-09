@@ -15,19 +15,19 @@ import pl.dentsys.treatment.service.TreatmentService;
 public class TreatmentController {
 	
 	@Autowired
-	private TreatmentService Treatservice;
+	private TreatmentService treatService;
 	
     @RequestMapping(value = "/treatment/dict", method = RequestMethod.GET)
     public List<TreatmentDict> getTreatmentDict() {
   	
-    	return Treatservice.getTreatmentDict();
+    	return treatService.getTreatmentDict();
       
     }
     
     @RequestMapping(value = "/treatment/dict/{treatmentId}", method = RequestMethod.GET)
     public TreatmentDict getSingleTreatment(@PathVariable Long treatmentId) {
   	
-    	return Treatservice.getSingleTreatment(treatmentId);
+    	return treatService.getSingleTreatment(treatmentId);
       
     }
 
