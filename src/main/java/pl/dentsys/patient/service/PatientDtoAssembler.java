@@ -16,7 +16,7 @@ public class PatientDtoAssembler {
 		dto.setId(entity.getId().longValue());
 		dto.setName(entity.getName());
 		dto.setSurname(entity.getSurname());
-		dto.setBirthDate(entity.getBirthDate().toString());
+		dto.setBirthDate(entity.getBirthDate());
 		dto.setAddress(entity.getStreetAddress());
 		dto.setCountry(entity.getCountry());
 		dto.setCity(entity.getCity());

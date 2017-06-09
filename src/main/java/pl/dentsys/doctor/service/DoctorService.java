@@ -1,6 +1,5 @@
 package pl.dentsys.doctor.service;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +32,7 @@ public class DoctorService {
 		DoctorEntity doctorEntity=new DoctorEntity();
 		doctorEntity.setName(doctor.getName());
 		doctorEntity.setSurname(doctor.getSurname());
-		doctorEntity.setBirthDate(new Date());
+		doctorEntity.setBirthDate(doctor.getBirthDate());
 		doctorEntity.setCity(doctor.getCity());
 		doctorEntity.setCountry(doctor.getCountry());
 		doctorEntity.setPesel(doctor.getPesel());
@@ -70,7 +69,7 @@ public class DoctorService {
 		DoctorEntity doctorEntity=doctorRepo.findOne(doctorId);
 		doctorEntity.setName(doctor.getName());
 		doctorEntity.setSurname(doctor.getSurname());
-		doctorEntity.setBirthDate(new Date());
+		doctorEntity.setBirthDate(doctor.getBirthDate());
 		doctorEntity.setCity(doctor.getCity());
 		doctorEntity.setCountry(doctor.getCountry());
 		doctorEntity.setPesel(doctor.getPesel());

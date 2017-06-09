@@ -48,11 +48,11 @@ public class VisitController {
     	visitService.deleteVisit(visitId);
     }
     
-//    @RequestMapping(value = "/visit-list", method = RequestMethod.GET)
-//    public List<VisitDto> getVisitList(@ModelAttribute VisitSearchCriteria searchCriteria) {
-//    	
-//    	return visitService.searchVisit(searchCriteria);
-//        
-//    }
+    @RequestMapping(value = "/visit-list", method = RequestMethod.GET)
+    public List<VisitDto> getVisitList(@ModelAttribute VisitSearchCriteria searchCriteria) {
+    	
+    	return visitService.searchVisit(searchCriteria);
+        
+    }
 
 }

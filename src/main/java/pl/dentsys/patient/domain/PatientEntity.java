@@ -1,7 +1,7 @@
 package pl.dentsys.patient.domain;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import lombok.Data;
 
@@ -28,9 +26,8 @@ public class PatientEntity implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
-	@Temporal(TemporalType.DATE)
 	@Column(name="BIRTH_DATE")
-	private Date birthDate;
+	private LocalDate birthDate;
 
 	private String city;
 

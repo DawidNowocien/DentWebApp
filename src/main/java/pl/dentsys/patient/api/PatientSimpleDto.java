@@ -1,5 +1,9 @@
 package pl.dentsys.patient.api;
 
+import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +15,8 @@ public class PatientSimpleDto {
 	
 	private String name;
 	private String surname;
-	private String birthDate;
+	@JsonFormat(pattern = "yyyy/MM/dd")
+	private LocalDate birthDate;
 	private String city;
 	private Long pesel;
 	private String address;

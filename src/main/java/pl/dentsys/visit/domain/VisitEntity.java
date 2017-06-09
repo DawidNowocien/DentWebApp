@@ -1,7 +1,7 @@
 package pl.dentsys.visit.domain;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -16,11 +16,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import lombok.Data;
-import pl.dentsys.doctor.domain.DoctorEntity;
 import pl.dentsys.patient.domain.PatientEntity;
 
 @Entity
@@ -42,10 +39,8 @@ public class VisitEntity implements Serializable{
 	@Column(name="PATIENT_ID")
 	private Long patientId;
 
-
-	@Temporal(TemporalType.DATE)
 	@Column(name="VISIT_DATE")
-	private Date visitDate;
+	private LocalDateTime visitDate;
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "visit",cascade = CascadeType.ALL)
 	public List<VisitTreatmentEntity> treatmentList;
