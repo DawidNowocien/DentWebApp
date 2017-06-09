@@ -9,9 +9,9 @@ import lombok.Data;
 @Data
 public class VisitSearchCriteria {
 	
-	@JsonFormat(pattern = "dd/mm/yyyy HH:mm")
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime dateFrom;
-	@JsonFormat(pattern = "dd/mm/yyyy HH:mm")
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime dateTo;
 	private Long doctorId;
 	private Long patientId;

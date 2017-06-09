@@ -20,7 +20,7 @@ public class VisitDtoAssembler {
 		PersonShort patient=new PersonShort(entity.getPatient().getId(),entity.getPatient().getName(),
 				entity.getPatient().getSurname(),entity.getPatient().getPesel());
 		dto.setVisitId(entity.getId());
-		dto.setVisitDate(entity.getVisitDate().toString());
+		dto.setVisitDate(entity.getVisitDate());
 		dto.setPatient(patient);
 		List<TreatmentDict> treatmentList=new ArrayList<>();
 		for(VisitTreatmentEntity treatment:entity.getTreatmentList()){
