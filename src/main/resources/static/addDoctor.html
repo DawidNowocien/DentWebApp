@@ -13,9 +13,13 @@
     <link rel="stylesheet" href="/css/form.css">
     <link rel="stylesheet" href="/css/footer.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-        
+      <style>
+    .error {
+      color: red;
+    }
+  </style>  
 </head>
-<body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:120%;">
+<body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:130%;">
 
 
 
@@ -40,15 +44,28 @@
 	
     <label>Imię:<br><input id="name" ng-model="newDoctor.name" type="text" required/></label> <br>
     <label>Nazwisko:<br /> <input id="surname" ng-model="newDoctor.surname" type="text" required/></label> <br>
+    <label>Pesel:<br /> <input id="pesel" ng-model="newDoctor.pesel" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11" required/></label><br>
     <label>Specjalizacja:<br /><input id="specialization" ng-model="newDoctor.specialization" type="text" required/></label> <br>
     <label>Adres:<br /><input id="address" ng-model="newDoctor.address" type="text" required/></label> <br>
     <label>Miasto:<br /><input id="city" ng-model="newDoctor.city" type="text" required/></label> <br>
-    <label>Kod pocztowy:<br /><input id="postCode" ng-model="newDoctor.postCode" onkeypress="return addPostCode(this,event)" required/></label> <br>
-    <label>Województwo:<br /><input id="region" ng-model="newDoctor.region" required/></label> <br>
+    
+    <div>
+    <label>Kod pocztowy:<br /><input id="postCode" name="postCode" ng-model="newDoctor.postCode" ng-pattern="postCode" required/></label>
+    <span class="error" ng-show="addDoctor.postCode.$error.pattern">Uzupełnij kod pocztowy wzoru [xx-xxx]</span><br>
+    </div>
+    			 
+    <label>Województwo:<br /><input id="region" ng-model="newDoctor.province" required/></label> <br>
   	<label>Kraj:<br /><input id="country" ng-model="newDoctor.country" type="text" required/></label> <br>
-    <label>Telefon:<br /><input id="phone" ng-model="newDoctor.phone" onkeypress="return addPhone(this,event)" required/></label> <br>
+
   
-	
+	<div>
+   	<label>Telefon (xxx-xxx-xxx) (1):<br /><input id="phone" name="phone" ng-pattern="phoneNumber" ng-model="newDoctor.phoneNumber1"  required/></label>
+   	<span class="error" ng-show="addDoctor.phone.$error.pattern">Uzupełnij numer według wzoru [xxx-xxx-xxx]</span>
+   	</div>
+   	<div>
+   	<label>Telefon (xxx-xxx-xxx) (2):<br /><input id="phone" name="phone2" ng-pattern="phoneNumber" ng-model="newDoctor.phoneNumber2"  required/></label>
+   	<span class="error" ng-show="addDoctor.phone2.$error.pattern">Uzupełnij numer według wzoru [xxx-xxx-xxx]</span>
+   	</div>
 	
 	
 	<button type="submit">Zapisz dane</button>
@@ -65,7 +82,9 @@
 			<p style="padding-left:400px; padding-top:20px">© DentMed Team</p>
 		</div>
 	</div>
+<script>
 
+</script>
 <script src="/webjars/angularjs/1.4.9/angular.js"></script>
 <script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
 <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>

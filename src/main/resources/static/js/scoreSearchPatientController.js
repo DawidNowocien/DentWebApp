@@ -45,5 +45,3 @@ app.controller ("scoreSearchPatientCtrl",function($scope,scoreSearchPatientServi
 
 })
 
-
-

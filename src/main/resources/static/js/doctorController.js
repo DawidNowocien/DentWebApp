@@ -3,7 +3,9 @@
 
     //2. create controller
     app.controller("doctorController", function ($scope, $http) {
-
+    	$scope.phoneNumber = /^\+?\d{3}[- ]?\d{3}[- ]?\d{3}$/;
+    	$scope.Birth = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+    	$scope.postCode = /^\+?\d{2}[- ]?\d{3}$/;
         //3. attach originalDoctor model object
         $scope.originalnewDoctor = {
            
