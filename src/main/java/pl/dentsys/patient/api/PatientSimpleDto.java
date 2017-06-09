@@ -15,7 +15,7 @@ public class PatientSimpleDto {
 	
 	private String name;
 	private String surname;
-	@JsonFormat(pattern = "dd/mm/yyyy")
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate birthDate;
 	private String city;
 	private Long pesel;
