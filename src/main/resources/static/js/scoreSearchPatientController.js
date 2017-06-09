@@ -34,6 +34,7 @@ app.controller ("scoreSearchPatientCtrl",function($scope,scoreSearchPatientServi
 	{
 		$scope.stations = data.data;
 
+	
 	});
 	
 	$scope.deletePatient = function() {
