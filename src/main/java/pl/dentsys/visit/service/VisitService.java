@@ -1,5 +1,7 @@
 package pl.dentsys.visit.service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Component;
 import pl.dentsys.visit.api.VisitDto;
 import pl.dentsys.visit.api.VisitSearchCriteria;
 import pl.dentsys.visit.api.VisitSimpleDto;
+import pl.dentsys.visit.domain.QueryParameters;
 import pl.dentsys.visit.domain.VisitEntity;
 import pl.dentsys.visit.domain.VisitRepository;
 import pl.dentsys.visit.domain.VisitTreatmentEntity;
@@ -49,13 +52,19 @@ public class VisitService {
 
 	public List<VisitDto> searchVisit(VisitSearchCriteria searchCriteria){
 	
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
+        LocalDateTime dateFrom = LocalDateTime.parse(searchCriteria.getDateFrom(), formatter);
+        LocalDateTime dateTo = LocalDateTime.parse(searchCriteria.getDateTo(), formatter);
+        QueryParameters param=new QueryParameters(dateFrom,dateTo,
+        		searchCriteria.getDoctorId(),searchCriteria.getPatientId());
 		
 		List<VisitEntity> visitEntityList=new ArrayList<>();
 		
 		if(searchCriteria.getPatientId()!=null)
-			visitEntityList=visitRepo.findVisitsByDoctorAndPatientidAndDates(searchCriteria);
+			visitEntityList=visitRepo.findVisitsByDoctorAndPatientidAndDates(param);
 		else
-			visitEntityList=visitRepo.findVisitsByDoctorAndDates(searchCriteria);
+			visitEntityList=visitRepo.findVisitsByDoctorAndDates(param);
 		
 		
 		return visitAssembler.visitToDtoList(visitEntityList);
