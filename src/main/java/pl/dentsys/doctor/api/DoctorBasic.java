@@ -11,7 +11,7 @@ public class DoctorBasic {
 
 	private String name;
 	private String surname;
-	@JsonFormat(pattern = "yyyy/MM/dd HH:mm")
+	@JsonFormat(pattern = "dd/mm/rrrr")
 	private LocalDate birthDate;
 	private String city;
 	private Long pesel;
