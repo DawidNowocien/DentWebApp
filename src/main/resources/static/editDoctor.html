@@ -42,10 +42,18 @@
 			<div ng-controller="editDoctorController">
 			<form name="edit" ng-submit="submitEditDoctorForm()">
 	
-    <    <label>Imię:<br><input id="name" ng-model="originaleditDoctor.name" type="text" required ng-value="originaleditDoctor.name"/></label> <br>
+  <label>Imię:<br><input id="name" ng-model="originaleditDoctor.name" type="text" required ng-value="originaleditDoctor.name"/></label> <br>
     <label>Nazwisko:<br /> <input id="surname" ng-model="originaleditDoctor.surname" type="text" required ng-value="originaleditDoctor.surname"/></label> <br>
+    
+        <div>
+    <label>Data urodzenia(dd/mm/rrrr):<br /><input type="text" id="birthDate" name="birth" ng-model="originaleditDoctor.dirthDate" ng-value="originaleditDoctor.birthDate" ng-pattern="Birth" required/></label>
+    <span class="error" ng-show="addDoctor.birth.$error.pattern">Uzupełnij datę według wzoru [dd/mm/rrrr]</span><br>
+    </div>
     <label>Pesel:<br /> <input id="pesel" ng-model="originaleditDoctor.pesel" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11" required ng-value="originaleditDoctor.pesel"/></label><br>
-    <label>Specjalizacja:<br /><input id="specialization" ng-model="originaleditDoctor.specialization" type="text" required ng-value="originaleditDoctor.specialization"/></label> <br>
+     <label>Specjalizacja:</label><br><select style="width:305px" ng-model="originaleditDoctor.specializationId" ng-value="originaleditDoctor.specializationId" required>
+   	<option value="">Brak</option>
+   	<option value="{{specialization.id}}" data-ng-repeat="specialization in specializations">{{specialization.label}}</option>
+   	</select><br><br>
     <label>Adres:<br /><input id="address" ng-model="originaleditDoctor.address" type="text" required ng-value="originaleditDoctor.address"/></label> <br>
     <label>Miasto:<br /><input id="city" ng-model="originaleditDoctor.city" type="text" required ng-value="originaleditDoctor.city"/></label> <br>
     

@@ -19,7 +19,7 @@
     }
   </style>  
 </head>
-<body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:130%;">
+<body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:150%;">
 
 
 
@@ -44,8 +44,16 @@
 	
     <label>Imię:<br><input id="name" ng-model="newDoctor.name" type="text" required/></label> <br>
     <label>Nazwisko:<br /> <input id="surname" ng-model="newDoctor.surname" type="text" required/></label> <br>
+    <div>
+    <label>Data urodzenia(dd/mm/rrrr):<br /><input type="text" id="birthDate" name="birth" ng-model="newDoctor.birthDate" ng-pattern="Birth" required/></label>
+    <span class="error" ng-show="addDoctor.birth.$error.pattern">Uzupełnij datę według wzoru [dd/mm/rrrr]</span><br>
+    </div>
     <label>Pesel:<br /> <input id="pesel" ng-model="newDoctor.pesel" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11" required/></label><br>
-    <label>Specjalizacja:<br /><input id="specialization" ng-model="newDoctor.specialization" type="text" required/></label> <br>
+
+  <label>Specjalizacja:</label><br><select style="width:305px" ng-model="newDoctor.specializationId" required>
+   	<option value="">Brak</option>
+   	<option value="{{specialization.id}}" data-ng-repeat="specialization in specializations">{{specialization.label}}</option>
+   	</select><br><br>
     <label>Adres:<br /><input id="address" ng-model="newDoctor.address" type="text" required/></label> <br>
     <label>Miasto:<br /><input id="city" ng-model="newDoctor.city" type="text" required/></label> <br>
     
@@ -54,7 +62,7 @@
     <span class="error" ng-show="addDoctor.postCode.$error.pattern">Uzupełnij kod pocztowy wzoru [xx-xxx]</span><br>
     </div>
     			 
-    <label>Województwo:<br /><input id="region" ng-model="newDoctor.province" required/></label> <br>
+    <label>Województwo:<br /><input id="region" ng-model="newDoctor.province"required /></label> <br>
   	<label>Kraj:<br /><input id="country" ng-model="newDoctor.country" type="text" required/></label> <br>
 
   
@@ -63,10 +71,10 @@
    	<span class="error" ng-show="addDoctor.phone.$error.pattern">Uzupełnij numer według wzoru [xxx-xxx-xxx]</span>
    	</div>
    	<div>
-   	<label>Telefon (xxx-xxx-xxx) (2):<br /><input id="phone" name="phone2" ng-pattern="phoneNumber" ng-model="newDoctor.phoneNumber2"  required/></label>
+   	<label>Telefon (xxx-xxx-xxx) (2):<br /><input id="phone" name="phone2" ng-pattern="phoneNumber" ng-model="newDoctor.phoneNumber2" required /></label>
    	<span class="error" ng-show="addDoctor.phone2.$error.pattern">Uzupełnij numer według wzoru [xxx-xxx-xxx]</span>
    	</div>
-	
+	 <label>Email:<br /><input id="mail" ng-model="newDoctor.mail" type="email" required/></label><br>
 	
 	<button type="submit">Zapisz dane</button>
 	<button type="reset" ng-click="resetForm()">Resetuj dane</button>
