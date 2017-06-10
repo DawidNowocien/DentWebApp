@@ -45,7 +45,7 @@
     <label>Imię:<br><input id="name" ng-model="newDoctor.name" type="text" required/></label> <br>
     <label>Nazwisko:<br /> <input id="surname" ng-model="newDoctor.surname" type="text" required/></label> <br>
     <div>
-    <label>Data urodzenia(dd/mm/rrrr):<br /><input type="text" id="dateBirth" name="birth" ng-model="newDoctor.dateBirth" ng-pattern="Birth" required/></label>
+    <label>Data urodzenia(dd/mm/rrrr):<br /><input type="text" id="birthDate" name="birth" ng-model="newDoctor.birthDate" ng-pattern="Birth" required/></label>
     <span class="error" ng-show="addDoctor.birth.$error.pattern">Uzupełnij datę według wzoru [dd/mm/rrrr]</span><br>
     </div>
     <label>Pesel:<br /> <input id="pesel" ng-model="newDoctor.pesel" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11" required/></label><br>
