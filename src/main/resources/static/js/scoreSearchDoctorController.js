@@ -4,8 +4,8 @@ app.service("scoreSearchDoctorService",function($http, $q,$window, $location)
 {
 	
 
-	 var searchObject = $location.absUrl();
-	 var searchObject_2 = searchObject.substring(45, 91);  
+	var searchObject = $location.absUrl();
+	 var searchObject_2 = searchObject.substring(44, 150);  
 	 
 	
 	 

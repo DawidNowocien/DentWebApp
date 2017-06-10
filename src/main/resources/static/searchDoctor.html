@@ -6,16 +6,22 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Wyszukaj lekarza | DentMed</title>
+    <title>Wyszukaj pacjenta | DentMed</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/form.css">
     <link rel="stylesheet" href="/css/footer.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-        
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 </head>
 <body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:120%;">
+
 
 
 
@@ -26,35 +32,36 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="/startAdminPage.html">Strona główna</a></li>
-      <li><a href="/addDoctor.html">Dodaj lekarza</a></li>
+      <li ><a href="/addDoctor.html">Dodaj lekarza</a></li>
       <li class="active"><a href="/searchDoctor.html">Wyszukaj lekarza</a></li>
     </ul>
   </div>
 </nav>
 
+
 <div id="form">
 
-<h1 align="center">Dane lekarza</h1>
+<h1 align="center">Wyszukaj lekarza</h1>
 			<div ng-controller="searchDoctorController">
-			<form name="addDoctor" ng-submit="submitSearchDoctorForm()">
+			<form name="search" ng-submit="submitSearchDoctorForm()" >
 	
-    <label>Imię:<br><input id="name" ng-model="searchDoctor.name" type="text" required/></label> <br>
-    <label>Nazwisko:<br /> <input id="surname" ng-model="searchDoctor.surname" type="text" required/></label> <br>
-    <label>Pesel:<br /> <input id="pesel" ng-model="searchDoctor.pesel" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11"/></label><br>
-    <label>Specjalizacja:<br /><input id="specialization" ng-model="searchDoctor.specialization" type="text" required/></label> <br>
+   				 <label>Imię:<br><input id="name" ng-model="searchDoctor.name" type="text"/></label><br>
+    			 <label>Nazwisko:<br /> <input id="surname" ng-model="searchDoctor.surname" type="text"/></label><br>
+    			 <label>Pesel:<br /> <input id="pesel" ng-model="searchDoctor.pesel" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11"/></label><br>
+    			<label>Specjalizacja:<br /><input value="{{specialization.id}}" id="specialization" ng-model="searchDoctor.specializationId" type="text" /></label> <br>
 
-  
 	
-	
-	
-
 	</form>
-	<a href="/scoreSearchDoctor.html?name={{searchDoctor.name}}&surname={{searchDoctor.surname}}&pesel={{searchDoctor.pesel}}&specialization={{searchDoctor.specialization}}"><button type="submit">Wyszukaj</button></a>
-	<a href="/startAdminPage.html"><button type="submit">Anuluj</button></a>	
+	
+	<a href="/scoreSearchDoctor.html?name={{searchDoctor.name}}&surname={{searchDoctor.surname}}&pesel={{searchDoctor.pesel}}&specializationId={{searchDoctor.specializationId}}"><button type="submit">Wyszukaj</button></a>
+	<a href="/startAdminPage.html"><button type="submit">Anuluj</button></a>
 
 </div>	
 	
 </div>
+
+
+
 <br><br><br><br>
 	<div id="footer">
 		<div id="container">
@@ -62,12 +69,17 @@
 		</div>
 	</div>
 
+
+
+
 <script src="/webjars/angularjs/1.4.9/angular.js"></script>
 <script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
 <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/controller.js"></script>
-<script src="/js/doctorController.js"></script>
+<script src="/js/searchDoctorController.js"></script>
 <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
+
+
 </body>
 </html>
