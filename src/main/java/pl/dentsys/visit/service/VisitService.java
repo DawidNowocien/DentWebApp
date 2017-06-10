@@ -32,12 +32,16 @@ public class VisitService {
 		visitEntity.setPatientId(visit.getPatientId());
 		visitEntity.setVisitDate(visit.getVisitDate());
 		List<VisitTreatmentEntity> treatmentList=new ArrayList<>();
-		for(Long treatmentId:visit.getTreatmentList()){
-			VisitTreatmentEntity visitTreat=new VisitTreatmentEntity();
-			visitTreat.setTreatmentId(treatmentId);
-			visitTreat.setVisit(visitEntity);
-			treatmentList.add(visitTreat);
+		
+		if(visit.getTreatmentList()!=null){
+			for(Long treatmentId:visit.getTreatmentList()){
+				VisitTreatmentEntity visitTreat=new VisitTreatmentEntity();
+				visitTreat.setTreatmentId(treatmentId);
+				visitTreat.setVisit(visitEntity);
+				treatmentList.add(visitTreat);
+			}
 		}
+
 		visitEntity.setTreatmentList(treatmentList);
 		visitRepo.save(visitEntity);
 	}
@@ -79,12 +83,15 @@ public class VisitService {
 		visitEntity.setVisitDate(visit.getVisitDate());
 		visitEntity.getTreatmentList().clear();
 		
-		for(Long treatmentId:visit.getTreatmentList()){
-			VisitTreatmentEntity visitTreat=new VisitTreatmentEntity();
-			visitTreat.setTreatmentId(treatmentId);
-			visitTreat.setVisit(visitEntity);
-			visitEntity.getTreatmentList().add(visitTreat);
+		if(visit.getTreatmentList()!=null){
+			for(Long treatmentId:visit.getTreatmentList()){
+				VisitTreatmentEntity visitTreat=new VisitTreatmentEntity();
+				visitTreat.setTreatmentId(treatmentId);
+				visitTreat.setVisit(visitEntity);
+				visitEntity.getTreatmentList().add(visitTreat);
+			}
 		}
+
 		visitRepo.saveAndFlush(visitEntity);
 	}
 	
