@@ -52,7 +52,7 @@
 	<td style="vertical-align: middle; font-size:16px" ng-model="searchDoctor.pesel">{{station.pesel}}</td>
 	<td style="vertical-align: middle; font-size:16px" ng-model="searchDoctor.specialization">{{station.specialization.label}}</td>
 	<td><a href="editDoctor.html#id?{{station.id}}"><button  type="submit">Edytuj dane</button></a></td>
-	<td><button  type="submit" ng-click="deleteDoctor()">Usuń </button></td>
+	<td><button  type="submit" ng-click="deleteDoctor(station)">Usuń </button></td>
 </div>
 	</div>
 	<td></td>

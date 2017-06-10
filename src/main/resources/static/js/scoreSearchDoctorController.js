@@ -36,7 +36,7 @@ app.controller ("scoreSearchDoctorCtrl",function($scope,scoreSearchDoctorService
 
 	});
 	
-	$scope.deleteDoctor = function() {
+	$scope.deleteDoctor = function(station) {
 		
 		$http.delete('doctor/'+station.id);
 		window.location.replace('/startAdminPage.html');

@@ -37,7 +37,7 @@ app.controller ("scoreSearchPatientCtrl",function($scope,scoreSearchPatientServi
 	
 	});
 	
-	$scope.deletePatient = function() {
+	$scope.deletePatient = function(station) {
 		
 		$http.delete('patient/'+station.id);
 		window.location.replace('/startDoctorPage.html');
