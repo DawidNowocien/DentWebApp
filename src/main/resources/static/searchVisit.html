@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dodaj pacjenta | DentMed</title>
+    <title>Wyszukaj wizytę | DentMed</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css">
@@ -18,12 +18,11 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#dateBirth" ).datepicker();
-  } );
-  </script>
-
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
 </head>
 <body ng-app="app" style="background-image: url('images/gabinet2.jpg');background-size:120%;">
 
@@ -48,32 +47,38 @@
 
 <div id="form">
 
-<h1 align="center">Wprowadź dane pacjenta</h1>
-			<div ng-controller="patientController">
-			<form name="addPatient" ng-submit="submitPatientForm()" >
+<h1 align="center">Wyszukaj wizytę</h1>
+			<div ng-controller="searchVisitController">
+			<form name="search" ng-submit="submitSearchPatientForm()" >
 	
-   				 <label>Imię:<br><input id="name" ng-model="newPatient.name" type="text" required/></label><br>
-    			 <label>Nazwisko:<br /> <input id="surname" ng-model="newPatient.surname" type="text" required/></label><br>
-    			 <label>Data urodzenia(rrrr/mm/dd):<br /><input type="text" id="dateBirth" ng-model="newPatient.dateBirth"  required/></label><br>
-    			 <label>Adres:<br /><input id="address" ng-model="newPatient.address" type="text" required/></label><br>
-    			 <label>Miasto:<br /><input id="city" ng-model="newPatient.city" type="text" required/></label><br>
-    			 <label>Kod pocztowy:<br /><input id="postCode" ng-model="newPatient.postCode" onkeypress="return addPostCode(this,event)" required/></label><br>
-    			 <label>Województwo:<br /><input id="region" ng-model="newPatient.region" required/></label><br>
-  				 <label>Kraj:<br /><input id="country" ng-model="newPatient.country" type="text" required/></label><br>
-   			 	 <label>Telefon:<br /><input id="phone" ng-model="newPatient.phone" onkeypress="return addPhone(this,event)" required/></label><br>
-    			 <label>Email:<br /><input id="mail" ng-model="newPatient.mail" type="email" required/></label><br>
+   				
+   				<label>Data początkowa(dd/mm/rrrr gg:mm):<br /><input type="text" id="visitDate" name="dateFrom" ng-model="searchVisit.visitDate" required/></label><br>
+   				<label>Data końcowa(dd/mm/rrrr gg:mm):<br /><input type="text" id="visitDate" name="dateTo" ng-model="searchVisit.visitDate2" required/></label><br>
+
+   				 
+   				 <label>Wybierz pacjenta:</label><br><select id="patientId" ng-model="searchVisit.patientId" >
+   				<option value="">Brak</option>
+   				<option value="{{patient.id}}" data-ng-repeat="patient in patients">{{patient.name}} {{patient.surname}}</option>
+   				</select><br><br>
+   				
+   				
+   				
+   				 
+   				<label>Wybierz lekarza:</label><br><select id="doctorId" ng-model="searchVisit.doctorId" >
+   				<option value="">Brak</option>
+   				<option value="{{doctor.id}}" data-ng-repeat="doctor in doctors">{{doctor.name}} {{doctor.surname}}</option>
+   				</select><br><br>
     
 
 	
-	<button type="submit">Zapisz dane</button>
-	<button type="reset" ng-click="resetForm()">Resetuj dane</button>
 	</form>
 	
+	<a href="/scoreSearchVisit.html?doctorId={{searchVisit.doctorId}}&patientId={{searchVisit.patientId}}&dateFrom={{searchVisit.visitDate}}&dateTo={{searchVisit.visitDate2}}"><button type="submit">Wyszukaj</button></a>
+	<a href="/startDoctorPage.html"><button type="submit">Anuluj</button></a>
 
 </div>	
 	
 </div>
-
 
 
 <br><br><br><br>
@@ -91,7 +96,7 @@
 <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/controller.js"></script>
-<script src="/js/patientController.js"></script>
+<script src="/js/searchVisitController.js"></script>
 <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
 
 

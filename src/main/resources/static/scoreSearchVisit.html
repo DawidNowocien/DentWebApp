@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Wynik wyszukiwania lekarzy | DentMed</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+ <link rel="stylesheet" href="/css/form.css">
+	<script src="js/app.js"></script>
+	 <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body  style="background-image: url('images/gabinet2.jpg');background-size:135%;">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/startDoctorPage.html">DentMed</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/startDoctorPage.html">Strona główna</a></li>
+     
+      <li><a href="/addPatient.html">Dodaj pacjenta</a></li>
+      <li><a href="/addVisit.html">Dodaj wizytę</a></li>
+      <li><a href="/searchPatient.html">Wyszukaj pacjenta</a></li>
+      <li class="active"><a href="/searchVisit.html">Wyszukaj wizytę</a></li>
+    </ul>
+  </div>
+</nav>
+<div id="form" style="width:800px">
+<div  data-ng-app="scoreSearchVisit">
+	<div data-ng-controller="scoreSearchVisitCtrl">
+	<h1>Wynik wyszukiwania wizyt</h1>
+		<table class="table table-striped">
+			<thead>
+			
+				<tr>
+					<th>Data wizyty</th>
+					<th>Pacjent</th>
+					<th>Lekarz</th>
+					<th></th>
+
+				</tr>
+
+			</thead>
+<tbody>
+
+	<tr data-ng-repeat="station in stations">
+	
+	<div>
+	<td style="vertical-align: middle; font-size:16px" ng-model="searchVisit.visitDate">{{station.visitDate}}</td>
+
+	<td><a href="editDoctor.html#id?{{station.id}}"><button  type="submit">Edytuj dane</button></a></td>
+	<td><button  type="submit" ng-click="deleteDoctor(station)">Usuń </button></td>
+</div>
+	</div>
+	<td></td>
+	</tr>
+</tbody>
+
+		</table>
+		
+	</div>
+
+</div>
+
+</div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+	<div id="footer">
+		<div id="container">
+			<p style="padding-left:400px; padding-top:20px">© DentMed Team</p>
+		</div>
+	</div>
+
+
+       
+<script src="/webjars/angularjs/1.4.9/angular.js"></script>
+<script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
+<script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/controller.js"></script>
+<script src="/js/scoreSearchVisitController.js"></script>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
+</body>
+</html>

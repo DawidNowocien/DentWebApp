@@ -1,38 +1,65 @@
 //1. create app module 
     var app = angular.module('app', []);
+    
+    app.service("PatientService",function($http, $q,$window, $location)
+    	    { 	 
+    	    	
+    	    	 
+    	    	var deferred = $q.defer();
+    	    	$http.get('patient-list').then(function(data)
+    	    	{
+    	    		deferred.resolve(data);
+    	    	});
 
-    //2. create controller
-    app.controller("visitController", function ($scope, $http) {
+    	    	this.getPatients = function ()
+    	    	{
+    	    		return deferred.promise;
+    	    	}
 
-        //3. attach originalvisit model object
-        $scope.originalnewVisit = {
+    	    	})
+    	    	
+    	    	app.service("DoctorService",function($http, $q,$window, $location)
+    	    { 	 
+    	    	
+    	    	 
+    	    	var deferred = $q.defer();
+    	    	$http.get('doctor-list').then(function(data)
+    	    	{
+    	    		deferred.resolve(data);
+    	    	});
+
+    	    	this.getDoctors = function ()
+    	    	{
+    	    		return deferred.promise;
+    	    	}
+
+    	    	})
+
+
+    app.controller("searchVisitController", function ($scope, $http,PatientService,DoctorService) {
+    	
+
+    	var promise_2 = PatientService.getPatients();
+    	promise_2.then(function(data)
+    	{
+    		$scope.patients = data.data;
+
+    	});
+    	
+    	var promise_3 = DoctorService.getDoctors();
+    	promise_3.then(function(data)
+    	{
+    		$scope.doctors = data.data;
+
+    	});
+    	
+    	
+        $scope.originalsearchVisit = {
         
         };
 
-        //4. copy originalnewVisit to newVisit. newVisit will be bind to a form 
-        $scope.newVisit = angular.copy($scope.originalnewVisit);
+        $scope.newVisit = angular.copy($scope.originalsearchVisit);
 
-        //5. create submitnewVisitForm() function. This will be called when user submits the form
-        $scope.submitVisitForm = function () {
-
-            var onSuccess = function (data, status, headers, config) {
-                alert('Visit saved successfully.');
-                
-            };
-
-            var onError = function (data, status, headers, config) {
-                alert('Error occured.');
-            }
-
-            $http.post('add-visit', $scope.newVisit)
-                .success(onSuccess)
-                .error(onError);
-            window.location.replace('/startDoctorPage.html');
-        };
-
-        //6. create resetForm() function. This will be called on Reset button click.  
-        $scope.resetForm = function () {
-            $scope.newVisit = angular.copy($scope.originalnewVisit);
-        };
+       
 });
   
